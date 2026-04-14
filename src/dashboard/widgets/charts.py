@@ -288,6 +288,7 @@ class HRChartsPanel(QWidget):
                label="Exceeds", color=SUCCESS, alpha=0.8)
         ax.set_title("Performance Distribution by Dept")
         ax.set_ylabel("Employee Count")
+        ax.set_xticks(range(len(depts)))
         ax.set_xticklabels(depts, rotation=30, ha="right")
         ax.legend()
         ax.grid(True, axis="y")

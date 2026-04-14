@@ -221,7 +221,7 @@ class MainWindow(QMainWindow):
 
     def _tick(self) -> None:
         self._clock_lbl.setText(
-            datetime.now().strftime("🕐 %Y-%m-%d  %H:%M:%S")
+            datetime.now().strftime("[%H:%M:%S]  %Y-%m-%d")
         )
 
     # ── Tab change handler ────────────────────────────────────

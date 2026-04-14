@@ -1,0 +1,961 @@
+date,product,region,channel,units_sold,revenue,cost_of_goods,gross_profit,discount_pct,sales_rep
+2024-01-01,Enterprise Suite,North,Direct,400,147807.69,80573.59,67234.1,11.4,Frank Chen
+2024-01-01,Enterprise Suite,South,Reseller,72,97844.92,50346.33,47498.59,6.7,Henry Wilson
+2024-01-01,Enterprise Suite,East,Online,73,97600.7,48958.22,48642.48,5.3,Alice Nguyen
+2024-01-01,Enterprise Suite,West,Reseller,260,72500.16,27612.26,44887.9,10.2,David Kim
+2024-01-01,Enterprise Suite,International,Reseller,295,308334.14,119601.05,188733.09,1.9,Frank Chen
+2024-01-01,Analytics Pro,North,Online,92,134363.9,55421.53,78942.37,12.5,Grace Park
+2024-01-01,Analytics Pro,South,Online,228,102954.42,40150.33,62804.09,0.1,Grace Park
+2024-01-01,Analytics Pro,East,Reseller,291,356106.64,134593.85,221512.79,1.7,David Kim
+2024-01-01,Analytics Pro,West,Online,257,345020.69,158956.51,186064.18,8.4,Grace Park
+2024-01-01,Analytics Pro,International,Online,82,142362.29,56487.63,85874.66,0.9,David Kim
+2024-01-01,DataBridge,North,Reseller,124,199766.08,96459.59,103306.49,6.1,David Kim
+2024-01-01,DataBridge,South,Reseller,107,110357.55,42184.65,68172.9,7.5,Frank Chen
+2024-01-01,DataBridge,East,Reseller,100,74272.18,35357.76,38914.42,5.4,Henry Wilson
+2024-01-01,DataBridge,West,Direct,210,142498.85,77495.9,65002.95,11.7,Frank Chen
+2024-01-01,DataBridge,International,Online,184,335741.91,148114.31,187627.6,3.0,Frank Chen
+2024-01-01,ReportMaster,North,Online,32,47841.07,20878.73,26962.34,9.4,Grace Park
+2024-01-01,ReportMaster,South,Direct,151,41510.73,18629.94,22880.79,4.9,Frank Chen
+2024-01-01,ReportMaster,East,Direct,97,120853.27,50682.71,70170.56,8.9,Henry Wilson
+2024-01-01,ReportMaster,West,Online,70,24423.98,10925.62,13498.36,7.4,David Kim
+2024-01-01,ReportMaster,International,Reseller,362,411670.14,180221.9,231448.24,0.3,Carol Lee
+2024-01-01,CloudSync,North,Online,235,92927.54,45018.56,47908.98,4.2,Bob Carter
+2024-01-01,CloudSync,South,Partner,385,236538.3,84558.31,151979.99,8.3,Henry Wilson
+2024-01-01,CloudSync,East,Partner,247,473059.07,193094.94,279964.13,7.7,Henry Wilson
+2024-01-01,CloudSync,West,Online,119,236366.85,124880.99,111485.86,11.2,David Kim
+2024-01-01,CloudSync,International,Reseller,480,763018.74,368028.55,394990.19,5.6,Henry Wilson
+2024-01-01,InsightHub,North,Direct,282,118711.93,61281.77,57430.16,2.3,Bob Carter
+2024-01-01,InsightHub,South,Partner,166,125924.71,63652.54,62272.17,14.6,David Kim
+2024-01-01,InsightHub,East,Partner,54,76668.42,28702.09,47966.33,7.6,Bob Carter
+2024-01-01,InsightHub,West,Reseller,190,282669.24,140711.84,141957.4,2.0,David Kim
+2024-01-01,InsightHub,International,Direct,101,140708.71,76140.95,64567.76,4.3,David Kim
+2024-01-01,AutoReport,North,Reseller,222,86716.6,32784.76,53931.84,6.3,Alice Nguyen
+2024-01-01,AutoReport,South,Reseller,272,438620.18,155081.78,283538.4,1.6,David Kim
+2024-01-01,AutoReport,East,Online,273,352396.17,184496.24,167899.93,9.0,Carol Lee
+2024-01-01,AutoReport,West,Online,287,291883.13,116627.13,175256.0,3.5,Grace Park
+2024-01-01,AutoReport,International,Reseller,192,243836.27,92471.16,151365.11,12.4,Carol Lee
+2024-01-01,PulseBoard,North,Online,98,46697.4,17422.71,29274.69,0.3,Carol Lee
+2024-01-01,PulseBoard,South,Partner,26,37057.44,15887.49,21169.95,4.8,Henry Wilson
+2024-01-01,PulseBoard,East,Partner,359,224784.54,89886.28,134898.26,8.6,Bob Carter
+2024-01-01,PulseBoard,West,Reseller,100,38300.94,19789.78,18511.16,0.8,David Kim
+2024-01-01,PulseBoard,International,Reseller,113,185732.06,93961.01,91771.05,9.6,Henry Wilson
+2024-02-01,Enterprise Suite,North,Partner,217,378367.68,167450.35,210917.33,5.8,Frank Chen
+2024-02-01,Enterprise Suite,South,Partner,43,26600.91,11265.55,15335.36,5.5,David Kim
+2024-02-01,Enterprise Suite,East,Partner,155,295731.36,157704.55,138026.81,7.2,Grace Park
+2024-02-01,Enterprise Suite,West,Online,156,180788.42,86160.78,94627.64,4.3,Grace Park
+2024-02-01,Enterprise Suite,International,Direct,250,326470.88,120474.01,205996.87,10.9,Eva Martinez
+2024-02-01,Analytics Pro,North,Direct,77,97684.33,49479.54,48204.79,11.9,Grace Park
+2024-02-01,Analytics Pro,South,Reseller,287,375711.2,144370.13,231341.07,8.5,Alice Nguyen
+2024-02-01,Analytics Pro,East,Partner,338,367026.02,172472.39,194553.63,14.0,Grace Park
+2024-02-01,Analytics Pro,West,Reseller,34,32418.83,16367.11,16051.72,10.1,Frank Chen
+2024-02-01,Analytics Pro,International,Online,507,388357.93,148167.22,240190.71,2.2,Carol Lee
+2024-02-01,DataBridge,North,Direct,322,384914.78,206787.0,178127.78,11.7,Eva Martinez
+2024-02-01,DataBridge,South,Online,450,185967.65,96723.03,89244.62,9.6,Henry Wilson
+2024-02-01,DataBridge,East,Direct,107,108901.64,56093.05,52808.59,4.4,Henry Wilson
+2024-02-01,DataBridge,West,Online,223,88990.19,48891.83,40098.36,13.2,Grace Park
+2024-02-01,DataBridge,International,Partner,105,38093.3,20166.85,17926.45,0.4,Bob Carter
+2024-02-01,ReportMaster,North,Direct,48,66301.64,23685.1,42616.54,0.1,Henry Wilson
+2024-02-01,ReportMaster,South,Direct,77,133128.07,48118.66,85009.41,12.0,Henry Wilson
+2024-02-01,ReportMaster,East,Reseller,302,170088.76,63780.69,106308.07,7.6,Alice Nguyen
+2024-02-01,ReportMaster,West,Partner,401,610449.5,237225.74,373223.76,4.1,Alice Nguyen
+2024-02-01,ReportMaster,International,Partner,106,29280.49,15425.82,13854.67,10.6,Eva Martinez
+2024-02-01,CloudSync,North,Online,42,43067.18,21827.14,21240.04,9.5,Grace Park
+2024-02-01,CloudSync,South,Partner,179,261267.81,125368.48,135899.33,14.1,Eva Martinez
+2024-02-01,CloudSync,East,Direct,96,39800.79,14997.69,24803.1,4.2,Alice Nguyen
+2024-02-01,CloudSync,West,Online,371,347185.36,136626.36,210559.0,8.8,David Kim
+2024-02-01,CloudSync,International,Partner,97,58788.51,27306.77,31481.74,8.5,Eva Martinez
+2024-02-01,InsightHub,North,Partner,167,198472.8,86590.44,111882.36,9.4,Grace Park
+2024-02-01,InsightHub,South,Partner,201,373438.49,168318.66,205119.83,7.8,Carol Lee
+2024-02-01,InsightHub,East,Reseller,385,115508.57,46910.6,68597.97,5.0,Grace Park
+2024-02-01,InsightHub,West,Online,103,173957.95,90685.95,83272.0,5.6,Frank Chen
+2024-02-01,InsightHub,International,Direct,104,207150.95,104491.28,102659.67,4.7,Henry Wilson
+2024-02-01,AutoReport,North,Reseller,275,60310.18,23630.22,36679.96,7.9,David Kim
+2024-02-01,AutoReport,South,Direct,387,661895.97,362761.57,299134.4,2.1,Eva Martinez
+2024-02-01,AutoReport,East,Partner,100,98080.22,43534.41,54545.81,2.3,Carol Lee
+2024-02-01,AutoReport,West,Direct,67,72517.82,33886.78,38631.04,7.4,Carol Lee
+2024-02-01,AutoReport,International,Direct,78,106740.53,51666.76,55073.77,11.4,Eva Martinez
+2024-02-01,PulseBoard,North,Direct,333,355853.96,179252.72,176601.24,12.8,Grace Park
+2024-02-01,PulseBoard,South,Online,272,221153.25,99466.64,121686.61,8.0,Eva Martinez
+2024-02-01,PulseBoard,East,Direct,222,179806.71,69822.65,109984.06,0.4,Bob Carter
+2024-02-01,PulseBoard,West,Partner,233,49667.68,20145.43,29522.25,10.5,Eva Martinez
+2024-02-01,PulseBoard,International,Partner,612,1117505.98,552203.5,565302.48,14.4,Grace Park
+2024-03-01,Enterprise Suite,North,Partner,304,301616.54,138930.84,162685.7,9.8,David Kim
+2024-03-01,Enterprise Suite,South,Reseller,498,410196.2,153730.85,256465.35,0.6,Frank Chen
+2024-03-01,Enterprise Suite,East,Partner,494,968363.78,418638.38,549725.4,11.9,Frank Chen
+2024-03-01,Enterprise Suite,West,Direct,297,79164.55,33608.56,45555.99,0.7,Grace Park
+2024-03-01,Enterprise Suite,International,Online,129,226759.01,112900.2,113858.81,12.0,David Kim
+2024-03-01,Analytics Pro,North,Direct,178,200487.24,97328.03,103159.21,0.4,Alice Nguyen
+2024-03-01,Analytics Pro,South,Reseller,274,475391.65,199477.32,275914.33,12.8,Henry Wilson
+2024-03-01,Analytics Pro,East,Online,232,124739.12,45774.56,78964.56,5.1,Henry Wilson
+2024-03-01,Analytics Pro,West,Online,583,544694.28,205548.15,339146.13,8.6,Bob Carter
+2024-03-01,Analytics Pro,International,Reseller,293,320673.81,120853.42,199820.39,5.5,Henry Wilson
+2024-03-01,DataBridge,North,Direct,27,36238.66,15171.62,21067.04,6.3,Henry Wilson
+2024-03-01,DataBridge,South,Reseller,212,132113.06,54835.98,77277.08,13.6,Henry Wilson
+2024-03-01,DataBridge,East,Online,320,236444.78,94169.91,142274.87,4.8,Bob Carter
+2024-03-01,DataBridge,West,Direct,147,236799.86,103641.91,133157.95,7.1,Grace Park
+2024-03-01,DataBridge,International,Reseller,585,946332.1,366264.47,580067.63,8.4,Carol Lee
+2024-03-01,ReportMaster,North,Direct,646,170877.95,92608.14,78269.81,1.5,David Kim
+2024-03-01,ReportMaster,South,Online,27,30481.87,12574.2,17907.67,0.8,Grace Park
+2024-03-01,ReportMaster,East,Direct,99,73629.15,31574.03,42055.12,6.2,Bob Carter
+2024-03-01,ReportMaster,West,Direct,48,53505.66,23965.21,29540.45,5.0,David Kim
+2024-03-01,ReportMaster,International,Online,216,137477.33,61311.13,76166.2,10.2,Carol Lee
+2024-03-01,CloudSync,North,Online,148,152349.02,75003.19,77345.83,2.3,Eva Martinez
+2024-03-01,CloudSync,South,Direct,392,100473.65,37388.85,63084.8,9.3,Bob Carter
+2024-03-01,CloudSync,East,Online,134,27943.62,14549.51,13394.11,9.3,David Kim
+2024-03-01,CloudSync,West,Direct,230,234145.38,110208.69,123936.69,14.8,Henry Wilson
+2024-03-01,CloudSync,International,Direct,193,247294.96,97253.97,150040.99,6.2,Frank Chen
+2024-03-01,InsightHub,North,Online,56,27881.17,13802.2,14078.97,10.6,Alice Nguyen
+2024-03-01,InsightHub,South,Online,414,176714.83,66929.63,109785.2,10.4,Alice Nguyen
+2024-03-01,InsightHub,East,Direct,570,1132904.78,528984.7,603920.08,1.9,Alice Nguyen
+2024-03-01,InsightHub,West,Partner,459,317507.26,114335.62,203171.64,8.9,Bob Carter
+2024-03-01,InsightHub,International,Online,104,64095.72,33636.0,30459.72,3.8,Eva Martinez
+2024-03-01,AutoReport,North,Partner,259,390153.8,180792.42,209361.38,11.4,Frank Chen
+2024-03-01,AutoReport,South,Reseller,59,67048.43,28937.59,38110.84,1.4,Grace Park
+2024-03-01,AutoReport,East,Reseller,409,789692.84,304575.33,485117.51,3.0,Henry Wilson
+2024-03-01,AutoReport,West,Reseller,287,511163.74,217658.91,293504.83,7.8,Frank Chen
+2024-03-01,AutoReport,International,Direct,540,209685.87,111300.14,98385.73,13.0,Grace Park
+2024-03-01,PulseBoard,North,Reseller,117,229624.71,97689.0,131935.71,10.8,Alice Nguyen
+2024-03-01,PulseBoard,South,Reseller,346,431040.18,186135.22,244904.96,9.0,Eva Martinez
+2024-03-01,PulseBoard,East,Reseller,122,53191.47,20349.69,32841.78,10.3,David Kim
+2024-03-01,PulseBoard,West,Direct,154,239671.46,126116.85,113554.61,4.2,David Kim
+2024-03-01,PulseBoard,International,Direct,156,43884.61,19585.63,24298.98,14.4,Carol Lee
+2024-04-01,Enterprise Suite,North,Direct,175,127853.79,64305.43,63548.36,13.2,Grace Park
+2024-04-01,Enterprise Suite,South,Reseller,494,221326.01,90941.38,130384.63,8.3,Alice Nguyen
+2024-04-01,Enterprise Suite,East,Online,117,58214.56,23323.73,34890.83,2.4,Alice Nguyen
+2024-04-01,Enterprise Suite,West,Reseller,490,455082.08,228452.57,226629.51,11.6,Carol Lee
+2024-04-01,Enterprise Suite,International,Direct,104,39594.06,15952.76,23641.3,12.7,Eva Martinez
+2024-04-01,Analytics Pro,North,Direct,310,537044.73,281902.85,255141.88,5.1,Frank Chen
+2024-04-01,Analytics Pro,South,Partner,141,266776.82,140750.85,126025.97,11.7,Carol Lee
+2024-04-01,Analytics Pro,East,Partner,369,161311.56,60513.25,100798.31,14.3,David Kim
+2024-04-01,Analytics Pro,West,Direct,213,122238.79,48973.37,73265.42,0.5,David Kim
+2024-04-01,Analytics Pro,International,Direct,88,81031.48,36980.92,44050.56,2.8,David Kim
+2024-04-01,DataBridge,North,Reseller,550,261348.35,139594.82,121753.53,5.1,Eva Martinez
+2024-04-01,DataBridge,South,Direct,93,151454.56,59429.39,92025.17,13.9,Grace Park
+2024-04-01,DataBridge,East,Partner,104,73383.8,26595.22,46788.58,6.9,Grace Park
+2024-04-01,DataBridge,West,Direct,88,68154.39,33752.51,34401.88,6.9,Henry Wilson
+2024-04-01,DataBridge,International,Online,315,257318.64,99182.72,158135.92,10.2,Henry Wilson
+2024-04-01,ReportMaster,North,Reseller,198,393080.27,179355.75,213724.52,9.9,Frank Chen
+2024-04-01,ReportMaster,South,Direct,208,192535.69,89021.53,103514.16,10.8,Eva Martinez
+2024-04-01,ReportMaster,East,Partner,238,222454.32,97437.22,125017.1,1.9,Carol Lee
+2024-04-01,ReportMaster,West,Reseller,118,27798.39,11544.93,16253.46,3.0,Bob Carter
+2024-04-01,ReportMaster,International,Reseller,100,69527.45,26262.67,43264.78,4.3,Bob Carter
+2024-04-01,CloudSync,North,Online,289,422663.65,228485.42,194178.23,9.2,Frank Chen
+2024-04-01,CloudSync,South,Online,236,338369.7,120001.3,218368.4,6.0,David Kim
+2024-04-01,CloudSync,East,Partner,403,700080.27,290143.46,409936.81,8.2,Frank Chen
+2024-04-01,CloudSync,West,Online,168,312979.65,162331.46,150648.19,14.7,Henry Wilson
+2024-04-01,CloudSync,International,Direct,587,599687.39,238702.72,360984.67,9.7,Frank Chen
+2024-04-01,InsightHub,North,Online,134,223632.71,116761.77,106870.94,2.5,Bob Carter
+2024-04-01,InsightHub,South,Online,67,30082.49,15187.66,14894.83,1.7,Alice Nguyen
+2024-04-01,InsightHub,East,Online,60,78924.2,42349.16,36575.04,14.7,David Kim
+2024-04-01,InsightHub,West,Partner,70,125490.98,60573.32,64917.66,1.7,Frank Chen
+2024-04-01,InsightHub,International,Reseller,91,130593.49,62755.05,67838.44,14.9,Eva Martinez
+2024-04-01,AutoReport,North,Direct,259,507120.79,209778.26,297342.53,6.9,Bob Carter
+2024-04-01,AutoReport,South,Online,115,195248.86,100405.98,94842.88,6.2,Grace Park
+2024-04-01,AutoReport,East,Online,237,428367.03,162257.61,266109.42,13.2,Henry Wilson
+2024-04-01,AutoReport,West,Direct,162,32551.27,14233.48,18317.79,11.6,Alice Nguyen
+2024-04-01,AutoReport,International,Direct,94,43649.34,22791.95,20857.39,12.3,Eva Martinez
+2024-04-01,PulseBoard,North,Partner,182,120741.26,60426.87,60314.39,7.6,Frank Chen
+2024-04-01,PulseBoard,South,Partner,228,131118.88,65598.53,65520.35,1.8,Grace Park
+2024-04-01,PulseBoard,East,Direct,39,77325.27,29185.82,48139.45,9.8,David Kim
+2024-04-01,PulseBoard,West,Direct,301,533114.98,207093.92,326021.06,3.3,David Kim
+2024-04-01,PulseBoard,International,Partner,304,514180.88,253031.78,261149.1,0.4,Eva Martinez
+2024-05-01,Enterprise Suite,North,Partner,74,70564.99,35394.13,35170.86,12.4,Carol Lee
+2024-05-01,Enterprise Suite,South,Partner,80,97229.7,47188.54,50041.16,1.0,Carol Lee
+2024-05-01,Enterprise Suite,East,Online,57,29043.13,15336.31,13706.82,7.0,Grace Park
+2024-05-01,Enterprise Suite,West,Online,196,108167.64,52559.24,55608.4,3.2,Eva Martinez
+2024-05-01,Enterprise Suite,International,Reseller,64,28316.52,14782.82,13533.7,4.8,Carol Lee
+2024-05-01,Analytics Pro,North,Online,222,126473.96,66736.91,59737.05,13.9,Eva Martinez
+2024-05-01,Analytics Pro,South,Partner,30,12586.32,6550.88,6035.44,11.3,Alice Nguyen
+2024-05-01,Analytics Pro,East,Reseller,182,142521.65,76923.08,65598.57,8.7,David Kim
+2024-05-01,Analytics Pro,West,Reseller,342,372304.53,202599.54,169704.99,5.7,Grace Park
+2024-05-01,Analytics Pro,International,Online,91,35117.83,18374.66,16743.17,8.8,Bob Carter
+2024-05-01,DataBridge,North,Partner,159,297041.4,159379.32,137662.08,5.9,Grace Park
+2024-05-01,DataBridge,South,Online,151,180885.65,74912.55,105973.1,5.2,Frank Chen
+2024-05-01,DataBridge,East,Direct,92,82834.42,32546.29,50288.13,8.4,Grace Park
+2024-05-01,DataBridge,West,Reseller,133,186746.07,67324.8,119421.27,14.2,Eva Martinez
+2024-05-01,DataBridge,International,Reseller,283,76233.29,37055.76,39177.53,8.4,Alice Nguyen
+2024-05-01,ReportMaster,North,Direct,171,35884.62,18205.34,17679.28,5.0,David Kim
+2024-05-01,ReportMaster,South,Reseller,362,177039.34,89401.61,87637.73,7.4,Bob Carter
+2024-05-01,ReportMaster,East,Partner,693,879895.76,462499.16,417396.6,5.6,Bob Carter
+2024-05-01,ReportMaster,West,Direct,106,208593.13,98339.62,110253.51,6.4,Henry Wilson
+2024-05-01,ReportMaster,International,Online,81,57665.1,23686.48,33978.62,13.1,Grace Park
+2024-05-01,CloudSync,North,Direct,65,32116.83,15533.82,16583.01,5.7,Grace Park
+2024-05-01,CloudSync,South,Partner,245,110574.03,42868.98,67705.05,5.2,Bob Carter
+2024-05-01,CloudSync,East,Direct,110,214934.59,78697.67,136236.92,9.8,Henry Wilson
+2024-05-01,CloudSync,West,Reseller,197,228969.43,125637.5,103331.93,14.4,Alice Nguyen
+2024-05-01,CloudSync,International,Partner,62,17434.81,9365.54,8069.27,12.6,Henry Wilson
+2024-05-01,InsightHub,North,Direct,283,523080.43,242442.35,280638.08,6.0,Eva Martinez
+2024-05-01,InsightHub,South,Reseller,219,118447.09,48232.78,70214.31,14.5,Bob Carter
+2024-05-01,InsightHub,East,Direct,135,231643.58,124780.95,106862.63,1.9,Henry Wilson
+2024-05-01,InsightHub,West,Reseller,380,740713.81,363666.53,377047.28,7.2,David Kim
+2024-05-01,InsightHub,International,Online,73,24775.1,12535.56,12239.54,6.7,Alice Nguyen
+2024-05-01,AutoReport,North,Direct,237,135202.72,73705.38,61497.34,3.3,David Kim
+2024-05-01,AutoReport,South,Partner,564,268736.58,97461.54,171275.04,2.9,Alice Nguyen
+2024-05-01,AutoReport,East,Direct,358,201683.26,102882.0,98801.26,9.3,Frank Chen
+2024-05-01,AutoReport,West,Reseller,241,238135.67,128388.16,109747.51,5.7,Bob Carter
+2024-05-01,AutoReport,International,Online,262,360445.29,174661.22,185784.07,6.5,Grace Park
+2024-05-01,PulseBoard,North,Direct,255,100256.37,45068.2,55188.17,7.8,Bob Carter
+2024-05-01,PulseBoard,South,Direct,303,321272.07,139545.56,181726.51,1.0,Frank Chen
+2024-05-01,PulseBoard,East,Partner,247,257919.66,136530.05,121389.61,7.1,Henry Wilson
+2024-05-01,PulseBoard,West,Partner,104,100953.4,48214.07,52739.33,12.8,Grace Park
+2024-05-01,PulseBoard,International,Partner,431,373953.78,162676.01,211277.77,12.2,Henry Wilson
+2024-06-01,Enterprise Suite,North,Online,243,374552.16,140918.15,233634.01,3.0,Carol Lee
+2024-06-01,Enterprise Suite,South,Partner,431,827901.0,315334.76,512566.24,3.0,Alice Nguyen
+2024-06-01,Enterprise Suite,East,Online,232,342126.59,131731.09,210395.5,5.4,Grace Park
+2024-06-01,Enterprise Suite,West,Online,102,121424.01,59619.87,61804.14,1.0,Bob Carter
+2024-06-01,Enterprise Suite,International,Online,373,375548.76,193073.9,182474.86,3.6,Carol Lee
+2024-06-01,Analytics Pro,North,Online,237,368109.65,151944.38,216165.27,4.1,Bob Carter
+2024-06-01,Analytics Pro,South,Online,64,39986.88,20098.65,19888.23,14.0,Carol Lee
+2024-06-01,Analytics Pro,East,Online,311,560298.55,297922.87,262375.68,11.9,Eva Martinez
+2024-06-01,Analytics Pro,West,Online,63,68655.27,29622.86,39032.41,8.5,Grace Park
+2024-06-01,Analytics Pro,International,Partner,89,153623.47,84333.88,69289.59,13.1,Grace Park
+2024-06-01,DataBridge,North,Direct,291,375779.62,202079.65,173699.97,5.2,Henry Wilson
+2024-06-01,DataBridge,South,Partner,161,307305.26,132318.25,174987.01,12.5,Alice Nguyen
+2024-06-01,DataBridge,East,Direct,165,111619.38,59454.85,52164.53,2.1,Carol Lee
+2024-06-01,DataBridge,West,Partner,156,105499.01,45996.66,59502.35,6.5,Henry Wilson
+2024-06-01,DataBridge,International,Partner,226,384929.17,151128.96,233800.21,0.1,Eva Martinez
+2024-06-01,ReportMaster,North,Partner,317,525552.18,193302.51,332249.67,5.9,Eva Martinez
+2024-06-01,ReportMaster,South,Online,187,175422.42,78217.95,97204.47,12.9,Eva Martinez
+2024-06-01,ReportMaster,East,Partner,521,970114.79,387245.69,582869.1,10.9,David Kim
+2024-06-01,ReportMaster,West,Direct,193,102999.37,45604.58,57394.79,4.3,Bob Carter
+2024-06-01,ReportMaster,International,Reseller,487,320694.87,120904.41,199790.46,14.2,Carol Lee
+2024-06-01,CloudSync,North,Partner,216,56853.42,21740.08,35113.34,9.6,David Kim
+2024-06-01,CloudSync,South,Reseller,171,104274.1,37549.85,66724.25,13.0,Grace Park
+2024-06-01,CloudSync,East,Partner,229,367661.57,197692.47,169969.1,10.9,Henry Wilson
+2024-06-01,CloudSync,West,Online,82,127004.48,51763.34,75241.14,1.8,Grace Park
+2024-06-01,CloudSync,International,Reseller,155,141233.41,71658.76,69574.65,13.7,Grace Park
+2024-06-01,InsightHub,North,Direct,477,778186.42,421874.51,356311.91,10.8,Bob Carter
+2024-06-01,InsightHub,South,Reseller,461,485469.39,265709.9,219759.49,1.4,Eva Martinez
+2024-06-01,InsightHub,East,Online,265,520449.76,274123.99,246325.77,4.5,David Kim
+2024-06-01,InsightHub,West,Direct,334,565552.76,200709.11,364843.65,3.3,Henry Wilson
+2024-06-01,InsightHub,International,Partner,218,383065.33,136439.66,246625.67,5.9,Carol Lee
+2024-06-01,AutoReport,North,Online,318,559646.9,279383.34,280263.56,13.3,Carol Lee
+2024-06-01,AutoReport,South,Direct,542,134918.89,73085.98,61832.91,10.7,Bob Carter
+2024-06-01,AutoReport,East,Direct,409,412745.64,197328.67,215416.97,3.0,Alice Nguyen
+2024-06-01,AutoReport,West,Reseller,111,216474.78,114856.87,101617.91,13.8,Bob Carter
+2024-06-01,AutoReport,International,Reseller,99,41203.71,15008.9,26194.81,14.8,Alice Nguyen
+2024-06-01,PulseBoard,North,Direct,75,100173.12,52734.64,47438.48,9.6,Grace Park
+2024-06-01,PulseBoard,South,Online,292,304198.13,116794.69,187403.44,11.9,Grace Park
+2024-06-01,PulseBoard,East,Online,173,248235.93,129400.9,118835.03,1.2,Carol Lee
+2024-06-01,PulseBoard,West,Reseller,191,350988.08,143555.47,207432.61,8.5,Bob Carter
+2024-06-01,PulseBoard,International,Online,152,67357.83,32918.32,34439.51,10.1,Eva Martinez
+2024-07-01,Enterprise Suite,North,Partner,190,67655.33,26688.24,40967.09,6.6,Grace Park
+2024-07-01,Enterprise Suite,South,Partner,67,70390.25,31664.27,38725.98,9.3,Grace Park
+2024-07-01,Enterprise Suite,East,Partner,373,569767.66,207606.28,362161.38,7.7,Frank Chen
+2024-07-01,Enterprise Suite,West,Online,606,612688.81,236606.26,376082.55,3.3,Henry Wilson
+2024-07-01,Enterprise Suite,International,Direct,48,72971.5,26009.22,46962.28,8.5,Henry Wilson
+2024-07-01,Analytics Pro,North,Direct,113,153093.57,66205.58,86887.99,11.4,Carol Lee
+2024-07-01,Analytics Pro,South,Direct,185,319960.15,175903.12,144057.03,3.4,Frank Chen
+2024-07-01,Analytics Pro,East,Online,196,388570.11,176937.2,211632.91,9.6,Henry Wilson
+2024-07-01,Analytics Pro,West,Partner,374,635465.91,260947.99,374517.92,6.6,Bob Carter
+2024-07-01,Analytics Pro,International,Reseller,856,665565.79,305798.57,359767.22,8.4,Carol Lee
+2024-07-01,DataBridge,North,Direct,273,218506.43,90928.26,127578.17,1.9,David Kim
+2024-07-01,DataBridge,South,Direct,93,111336.44,39438.84,71897.6,4.7,Grace Park
+2024-07-01,DataBridge,East,Direct,109,32578.24,15192.71,17385.53,0.3,Alice Nguyen
+2024-07-01,DataBridge,West,Reseller,258,84942.59,43367.48,41575.11,13.4,David Kim
+2024-07-01,DataBridge,International,Direct,57,26794.06,10464.64,16329.42,9.9,Bob Carter
+2024-07-01,ReportMaster,North,Partner,351,371715.75,156839.24,214876.51,3.4,Carol Lee
+2024-07-01,ReportMaster,South,Partner,76,75279.62,36044.02,39235.6,9.2,Frank Chen
+2024-07-01,ReportMaster,East,Reseller,617,793542.66,316713.36,476829.3,0.6,David Kim
+2024-07-01,ReportMaster,West,Reseller,116,195337.97,104532.64,90805.33,3.0,Eva Martinez
+2024-07-01,ReportMaster,International,Reseller,194,305246.34,166066.31,139180.03,13.6,Alice Nguyen
+2024-07-01,CloudSync,North,Direct,192,250539.05,118491.78,132047.27,6.3,Frank Chen
+2024-07-01,CloudSync,South,Partner,259,447593.74,198952.61,248641.13,7.6,Frank Chen
+2024-07-01,CloudSync,East,Partner,309,159027.87,62643.61,96384.26,7.0,Eva Martinez
+2024-07-01,CloudSync,West,Reseller,286,495666.58,197443.79,298222.79,9.3,David Kim
+2024-07-01,CloudSync,International,Online,318,149802.46,55079.44,94723.02,10.1,Grace Park
+2024-07-01,InsightHub,North,Online,68,54609.74,28350.09,26259.65,7.8,Carol Lee
+2024-07-01,InsightHub,South,Online,501,204717.6,107889.98,96827.62,7.3,Carol Lee
+2024-07-01,InsightHub,East,Direct,228,102968.83,45122.54,57846.29,6.2,Carol Lee
+2024-07-01,InsightHub,West,Partner,123,107341.17,51552.42,55788.75,1.6,David Kim
+2024-07-01,InsightHub,International,Direct,263,231468.34,105569.99,125898.35,8.9,Grace Park
+2024-07-01,AutoReport,North,Direct,48,18264.83,9252.31,9012.52,14.1,Carol Lee
+2024-07-01,AutoReport,South,Direct,482,645031.24,345628.72,299402.52,14.7,Grace Park
+2024-07-01,AutoReport,East,Partner,70,56372.01,30865.34,25506.67,0.2,Alice Nguyen
+2024-07-01,AutoReport,West,Online,103,108642.17,40869.47,67772.7,0.8,Henry Wilson
+2024-07-01,AutoReport,International,Partner,314,302249.87,162012.31,140237.56,7.5,Henry Wilson
+2024-07-01,PulseBoard,North,Reseller,83,58355.41,30408.72,27946.69,5.8,David Kim
+2024-07-01,PulseBoard,South,Online,251,64237.25,27517.15,36720.1,3.0,Frank Chen
+2024-07-01,PulseBoard,East,Partner,218,180492.92,89046.25,91446.67,7.0,Carol Lee
+2024-07-01,PulseBoard,West,Partner,269,489624.2,204922.45,284701.75,0.6,Eva Martinez
+2024-07-01,PulseBoard,International,Online,87,164119.68,77350.66,86769.02,10.7,Grace Park
+2024-08-01,Enterprise Suite,North,Online,388,440186.4,201011.1,239175.3,2.7,David Kim
+2024-08-01,Enterprise Suite,South,Partner,130,51330.37,20432.04,30898.33,4.1,Alice Nguyen
+2024-08-01,Enterprise Suite,East,Reseller,37,33052.17,13809.25,19242.92,4.9,Carol Lee
+2024-08-01,Enterprise Suite,West,Direct,123,230175.7,103773.3,126402.4,8.0,Henry Wilson
+2024-08-01,Enterprise Suite,International,Reseller,281,509146.22,222430.63,286715.59,11.5,Frank Chen
+2024-08-01,Analytics Pro,North,Reseller,420,666188.58,245593.21,420595.37,9.8,Henry Wilson
+2024-08-01,Analytics Pro,South,Direct,116,202112.45,74696.04,127416.41,4.1,Henry Wilson
+2024-08-01,Analytics Pro,East,Online,257,248052.48,130446.42,117606.06,4.1,David Kim
+2024-08-01,Analytics Pro,West,Reseller,306,291293.0,116946.7,174346.3,7.5,Alice Nguyen
+2024-08-01,Analytics Pro,International,Direct,230,152282.81,82834.89,69447.92,11.8,Grace Park
+2024-08-01,DataBridge,North,Online,350,177086.47,90959.66,86126.81,8.8,Carol Lee
+2024-08-01,DataBridge,South,Online,170,52007.65,24421.29,27586.36,12.2,Frank Chen
+2024-08-01,DataBridge,East,Direct,64,26471.63,14226.13,12245.5,13.4,Carol Lee
+2024-08-01,DataBridge,West,Direct,236,113592.55,42123.56,71468.99,15.0,David Kim
+2024-08-01,DataBridge,International,Reseller,303,108463.97,40435.78,68028.19,13.9,Frank Chen
+2024-08-01,ReportMaster,North,Reseller,222,120342.07,63742.2,56599.87,3.8,David Kim
+2024-08-01,ReportMaster,South,Online,109,88314.91,42487.59,45827.32,1.4,Grace Park
+2024-08-01,ReportMaster,East,Reseller,615,530756.99,242786.57,287970.42,4.5,Carol Lee
+2024-08-01,ReportMaster,West,Reseller,52,28835.41,11602.77,17232.64,9.4,Carol Lee
+2024-08-01,ReportMaster,International,Online,53,66649.36,36206.63,30442.73,7.8,David Kim
+2024-08-01,CloudSync,North,Direct,265,386097.88,211327.73,174770.15,6.9,Alice Nguyen
+2024-08-01,CloudSync,South,Direct,42,63091.41,33051.85,30039.56,9.4,Eva Martinez
+2024-08-01,CloudSync,East,Reseller,422,112072.38,51692.05,60380.33,3.2,Bob Carter
+2024-08-01,CloudSync,West,Reseller,370,542715.94,212132.42,330583.52,1.4,Carol Lee
+2024-08-01,CloudSync,International,Online,323,629761.6,309614.04,320147.56,9.2,Bob Carter
+2024-08-01,InsightHub,North,Online,113,23587.98,11697.26,11890.72,14.2,Alice Nguyen
+2024-08-01,InsightHub,South,Online,355,278447.3,126510.54,151936.76,6.5,Carol Lee
+2024-08-01,InsightHub,East,Partner,374,196451.41,82592.91,113858.5,4.3,David Kim
+2024-08-01,InsightHub,West,Online,140,36213.3,13159.75,23053.55,6.0,Frank Chen
+2024-08-01,InsightHub,International,Direct,107,131883.19,59294.64,72588.55,8.7,Bob Carter
+2024-08-01,AutoReport,North,Direct,163,234976.13,123044.61,111931.52,5.5,Eva Martinez
+2024-08-01,AutoReport,South,Partner,119,85502.45,42302.26,43200.19,1.0,Frank Chen
+2024-08-01,AutoReport,East,Reseller,277,83465.6,43462.71,40002.89,3.5,David Kim
+2024-08-01,AutoReport,West,Partner,90,178232.89,67733.12,110499.77,12.5,Eva Martinez
+2024-08-01,AutoReport,International,Reseller,104,149072.18,60025.92,89046.26,6.3,Alice Nguyen
+2024-08-01,PulseBoard,North,Online,342,222825.04,94257.1,128567.94,2.2,Carol Lee
+2024-08-01,PulseBoard,South,Reseller,285,491852.9,195515.04,296337.86,2.3,Eva Martinez
+2024-08-01,PulseBoard,East,Direct,153,236618.74,86217.35,150401.39,8.9,Alice Nguyen
+2024-08-01,PulseBoard,West,Online,164,325415.41,130661.93,194753.48,2.8,Eva Martinez
+2024-08-01,PulseBoard,International,Direct,380,686498.38,350906.76,335591.62,3.7,Grace Park
+2024-09-01,Enterprise Suite,North,Partner,209,298329.24,162565.0,135764.24,6.3,Bob Carter
+2024-09-01,Enterprise Suite,South,Partner,281,90277.92,48415.36,41862.56,1.9,Eva Martinez
+2024-09-01,Enterprise Suite,East,Direct,91,137069.82,49855.61,87214.21,10.4,Grace Park
+2024-09-01,Enterprise Suite,West,Partner,667,520549.46,254785.4,265764.06,14.4,Eva Martinez
+2024-09-01,Enterprise Suite,International,Direct,295,588761.39,224952.69,363808.7,3.0,Frank Chen
+2024-09-01,Analytics Pro,North,Partner,243,303594.69,141790.34,161804.35,9.9,David Kim
+2024-09-01,Analytics Pro,South,Partner,443,169291.59,68500.68,100790.91,7.9,Henry Wilson
+2024-09-01,Analytics Pro,East,Reseller,94,142995.6,73712.54,69283.06,8.9,Bob Carter
+2024-09-01,Analytics Pro,West,Reseller,188,282371.6,128182.79,154188.81,5.5,Carol Lee
+2024-09-01,Analytics Pro,International,Direct,235,260679.89,103481.58,157198.31,1.6,Henry Wilson
+2024-09-01,DataBridge,North,Direct,200,328973.79,122432.25,206541.54,9.1,Henry Wilson
+2024-09-01,DataBridge,South,Reseller,207,235949.9,108643.28,127306.62,3.2,Henry Wilson
+2024-09-01,DataBridge,East,Partner,189,361158.83,186296.59,174862.24,4.2,Grace Park
+2024-09-01,DataBridge,West,Direct,666,687764.95,298457.71,389307.24,1.8,Frank Chen
+2024-09-01,DataBridge,International,Online,94,57157.41,26276.57,30880.84,3.2,Carol Lee
+2024-09-01,ReportMaster,North,Direct,152,71711.72,38199.88,33511.84,13.5,Henry Wilson
+2024-09-01,ReportMaster,South,Reseller,469,676716.34,239081.47,437634.87,14.4,Henry Wilson
+2024-09-01,ReportMaster,East,Partner,388,431821.58,188877.83,242943.75,5.1,Eva Martinez
+2024-09-01,ReportMaster,West,Reseller,143,73111.49,30263.27,42848.22,4.4,Eva Martinez
+2024-09-01,ReportMaster,International,Partner,169,244541.11,86814.06,157727.05,3.9,Carol Lee
+2024-09-01,CloudSync,North,Online,174,268676.37,121795.0,146881.37,9.1,Carol Lee
+2024-09-01,CloudSync,South,Online,33,7538.71,3479.24,4059.47,11.3,Henry Wilson
+2024-09-01,CloudSync,East,Online,424,740363.04,277234.79,463128.25,13.9,David Kim
+2024-09-01,CloudSync,West,Direct,146,146213.46,60952.27,85261.19,2.5,Alice Nguyen
+2024-09-01,CloudSync,International,Direct,268,368398.44,138105.97,230292.47,4.4,Frank Chen
+2024-09-01,InsightHub,North,Reseller,174,163588.84,79091.83,84497.01,6.9,Henry Wilson
+2024-09-01,InsightHub,South,Partner,160,98975.05,47825.78,51149.27,5.3,Carol Lee
+2024-09-01,InsightHub,East,Reseller,112,122042.77,47535.22,74507.55,12.9,Carol Lee
+2024-09-01,InsightHub,West,Partner,747,456420.9,244808.13,211612.77,8.6,Bob Carter
+2024-09-01,InsightHub,International,Online,285,99285.56,44610.29,54675.27,13.3,Bob Carter
+2024-09-01,AutoReport,North,Partner,258,148788.4,76564.6,72223.8,3.0,Frank Chen
+2024-09-01,AutoReport,South,Partner,209,373464.4,185194.31,188270.09,12.0,Carol Lee
+2024-09-01,AutoReport,East,Direct,612,1019009.52,508400.1,510609.42,6.8,Henry Wilson
+2024-09-01,AutoReport,West,Reseller,366,627050.64,269199.45,357851.19,5.9,Bob Carter
+2024-09-01,AutoReport,International,Partner,190,61979.14,28818.08,33161.06,7.0,Carol Lee
+2024-09-01,PulseBoard,North,Partner,127,139924.76,62186.61,77738.15,12.3,Eva Martinez
+2024-09-01,PulseBoard,South,Partner,433,206231.82,96214.67,110017.15,4.3,Grace Park
+2024-09-01,PulseBoard,East,Partner,223,425386.69,181325.97,244060.72,13.1,Eva Martinez
+2024-09-01,PulseBoard,West,Direct,411,105984.12,45431.19,60552.93,13.1,Grace Park
+2024-09-01,PulseBoard,International,Partner,226,235747.28,124591.7,111155.58,3.4,Frank Chen
+2024-10-01,Enterprise Suite,North,Online,227,147415.32,55708.22,91707.1,12.9,Henry Wilson
+2024-10-01,Enterprise Suite,South,Direct,417,467924.16,239338.28,228585.88,5.3,Eva Martinez
+2024-10-01,Enterprise Suite,East,Partner,235,104808.58,44930.54,59878.04,13.4,Henry Wilson
+2024-10-01,Enterprise Suite,West,Direct,332,341318.4,131852.88,209465.52,7.9,Carol Lee
+2024-10-01,Enterprise Suite,International,Online,268,138009.31,69413.49,68595.82,5.4,David Kim
+2024-10-01,Analytics Pro,North,Reseller,248,150172.73,74305.83,75866.9,12.6,Alice Nguyen
+2024-10-01,Analytics Pro,South,Direct,203,295805.79,143415.7,152390.09,7.9,David Kim
+2024-10-01,Analytics Pro,East,Partner,59,112138.31,49234.67,62903.64,10.1,Alice Nguyen
+2024-10-01,Analytics Pro,West,Direct,436,783649.49,281937.55,501711.94,11.3,Eva Martinez
+2024-10-01,Analytics Pro,International,Online,371,152297.36,56451.24,95846.12,9.6,Bob Carter
+2024-10-01,DataBridge,North,Direct,209,244635.11,131366.99,113268.12,5.8,Eva Martinez
+2024-10-01,DataBridge,South,Reseller,337,419024.62,199184.7,219839.92,5.3,Grace Park
+2024-10-01,DataBridge,East,Partner,806,250139.94,117358.55,132781.39,1.8,Carol Lee
+2024-10-01,DataBridge,West,Direct,584,164066.41,86077.11,77989.3,10.4,Bob Carter
+2024-10-01,DataBridge,International,Online,58,73898.23,32287.68,41610.55,13.8,Grace Park
+2024-10-01,ReportMaster,North,Online,323,494297.99,218995.01,275302.98,3.3,Henry Wilson
+2024-10-01,ReportMaster,South,Reseller,424,438008.15,225697.76,212310.39,10.3,Carol Lee
+2024-10-01,ReportMaster,East,Partner,381,615884.23,268894.83,346989.4,6.6,Alice Nguyen
+2024-10-01,ReportMaster,West,Reseller,169,53332.33,26852.91,26479.42,5.6,Eva Martinez
+2024-10-01,ReportMaster,International,Online,457,864269.59,416728.01,447541.58,6.5,Grace Park
+2024-10-01,CloudSync,North,Direct,373,287918.78,106774.69,181144.09,6.2,Grace Park
+2024-10-01,CloudSync,South,Direct,162,213617.27,94322.07,119295.2,0.3,Alice Nguyen
+2024-10-01,CloudSync,East,Online,91,83933.98,38257.77,45676.21,0.0,Alice Nguyen
+2024-10-01,CloudSync,West,Direct,223,133639.87,47421.56,86218.31,14.1,Eva Martinez
+2024-10-01,CloudSync,International,Online,62,81330.88,38392.89,42937.99,14.8,Frank Chen
+2024-10-01,InsightHub,North,Direct,305,271789.55,145746.78,126042.77,2.2,David Kim
+2024-10-01,InsightHub,South,Online,623,189193.82,101137.88,88055.94,8.5,Eva Martinez
+2024-10-01,InsightHub,East,Partner,99,47418.36,18911.57,28506.79,12.8,David Kim
+2024-10-01,InsightHub,West,Reseller,149,72992.45,35388.85,37603.6,0.9,Bob Carter
+2024-10-01,InsightHub,International,Partner,364,462181.71,180956.82,281224.89,8.4,Frank Chen
+2024-10-01,AutoReport,North,Partner,517,183325.71,73133.29,110192.42,0.2,Bob Carter
+2024-10-01,AutoReport,South,Reseller,373,355431.39,147461.78,207969.61,12.0,Carol Lee
+2024-10-01,AutoReport,East,Direct,472,220095.7,117239.75,102855.95,7.8,Bob Carter
+2024-10-01,AutoReport,West,Online,136,51866.42,24296.09,27570.33,3.9,Henry Wilson
+2024-10-01,AutoReport,International,Reseller,198,104934.59,46572.77,58361.82,9.8,Carol Lee
+2024-10-01,PulseBoard,North,Direct,198,292644.34,144339.85,148304.49,13.1,Frank Chen
+2024-10-01,PulseBoard,South,Direct,203,64845.31,25825.21,39020.1,0.9,Henry Wilson
+2024-10-01,PulseBoard,East,Partner,398,301356.97,138561.19,162795.78,8.4,Grace Park
+2024-10-01,PulseBoard,West,Direct,254,95642.1,49336.43,46305.67,8.9,David Kim
+2024-10-01,PulseBoard,International,Direct,262,104629.85,38284.18,66345.67,11.3,Eva Martinez
+2024-11-01,Enterprise Suite,North,Online,398,279193.38,137304.21,141889.17,14.2,Bob Carter
+2024-11-01,Enterprise Suite,South,Direct,148,155938.22,72378.12,83560.1,4.7,Frank Chen
+2024-11-01,Enterprise Suite,East,Online,138,121492.39,61715.85,59776.54,1.0,Carol Lee
+2024-11-01,Enterprise Suite,West,Online,465,97172.42,37592.32,59580.1,9.5,Eva Martinez
+2024-11-01,Enterprise Suite,International,Reseller,444,687812.37,374913.36,312899.01,6.9,Carol Lee
+2024-11-01,Analytics Pro,North,Partner,306,418365.25,211930.29,206434.96,9.2,Alice Nguyen
+2024-11-01,Analytics Pro,South,Reseller,251,172140.52,80829.59,91310.93,6.6,Bob Carter
+2024-11-01,Analytics Pro,East,Direct,568,299618.48,148708.26,150910.22,6.7,David Kim
+2024-11-01,Analytics Pro,West,Online,161,284062.82,150940.03,133122.79,5.1,Alice Nguyen
+2024-11-01,Analytics Pro,International,Partner,158,219108.96,110909.41,108199.55,11.4,Alice Nguyen
+2024-11-01,DataBridge,North,Partner,177,328221.16,172304.5,155916.66,13.7,Bob Carter
+2024-11-01,DataBridge,South,Reseller,272,245479.2,98569.08,146910.12,2.5,Alice Nguyen
+2024-11-01,DataBridge,East,Reseller,606,820343.54,398033.8,422309.74,5.0,Frank Chen
+2024-11-01,DataBridge,West,Partner,440,651240.94,313435.59,337805.35,6.8,Carol Lee
+2024-11-01,DataBridge,International,Online,330,228064.57,87220.1,140844.47,5.0,Grace Park
+2024-11-01,ReportMaster,North,Online,126,54429.4,26549.54,27879.86,14.2,Eva Martinez
+2024-11-01,ReportMaster,South,Direct,215,322169.76,161795.04,160374.72,12.6,Eva Martinez
+2024-11-01,ReportMaster,East,Direct,395,787167.2,285531.3,501635.9,12.4,Bob Carter
+2024-11-01,ReportMaster,West,Online,607,322211.22,112827.07,209384.15,9.0,Carol Lee
+2024-11-01,ReportMaster,International,Online,40,12097.75,6450.58,5647.17,4.7,Alice Nguyen
+2024-11-01,CloudSync,North,Reseller,524,671479.17,327768.73,343710.44,1.4,Alice Nguyen
+2024-11-01,CloudSync,South,Direct,317,468960.53,256482.49,212478.04,10.2,Frank Chen
+2024-11-01,CloudSync,East,Online,99,110189.13,59215.97,50973.16,3.9,Grace Park
+2024-11-01,CloudSync,West,Online,240,421280.17,159521.85,261758.32,4.3,Frank Chen
+2024-11-01,CloudSync,International,Online,97,132519.41,56666.72,75852.69,8.3,Eva Martinez
+2024-11-01,InsightHub,North,Direct,229,423655.61,203303.23,220352.38,13.9,Henry Wilson
+2024-11-01,InsightHub,South,Reseller,88,32703.99,13746.81,18957.18,10.5,Henry Wilson
+2024-11-01,InsightHub,East,Reseller,318,224208.93,93297.84,130911.09,4.1,Alice Nguyen
+2024-11-01,InsightHub,West,Partner,690,1141329.72,554041.61,587288.11,2.9,Carol Lee
+2024-11-01,InsightHub,International,Partner,151,57361.47,21960.88,35400.59,2.0,Eva Martinez
+2024-11-01,AutoReport,North,Online,361,655883.14,303407.07,352476.07,13.8,Grace Park
+2024-11-01,AutoReport,South,Online,160,285273.94,126808.46,158465.48,14.6,Grace Park
+2024-11-01,AutoReport,East,Partner,284,467805.39,173222.26,294583.13,4.6,Carol Lee
+2024-11-01,AutoReport,West,Partner,73,77288.69,32286.51,45002.18,3.4,Alice Nguyen
+2024-11-01,AutoReport,International,Online,283,545461.61,255795.59,289666.02,9.6,Frank Chen
+2024-11-01,PulseBoard,North,Partner,459,359345.87,133335.83,226010.04,10.0,Eva Martinez
+2024-11-01,PulseBoard,South,Online,39,52638.91,25040.08,27598.83,6.3,Alice Nguyen
+2024-11-01,PulseBoard,East,Direct,309,335208.88,149971.25,185237.63,14.5,Eva Martinez
+2024-11-01,PulseBoard,West,Online,439,832570.82,344546.77,488024.05,3.8,Grace Park
+2024-11-01,PulseBoard,International,Reseller,97,124093.46,45208.85,78884.61,14.0,Alice Nguyen
+2024-12-01,Enterprise Suite,North,Reseller,656,206738.78,102850.91,103887.87,1.5,Alice Nguyen
+2024-12-01,Enterprise Suite,South,Direct,211,346552.32,163178.13,183374.19,12.7,Frank Chen
+2024-12-01,Enterprise Suite,East,Reseller,311,590732.73,239243.31,351489.42,0.4,Alice Nguyen
+2024-12-01,Enterprise Suite,West,Direct,258,187361.87,85091.17,102270.7,5.1,Henry Wilson
+2024-12-01,Enterprise Suite,International,Partner,209,294564.11,149964.07,144600.04,8.8,Henry Wilson
+2024-12-01,Analytics Pro,North,Reseller,212,167924.9,75414.78,92510.12,5.3,Alice Nguyen
+2024-12-01,Analytics Pro,South,Partner,387,298963.48,125338.31,173625.17,8.8,Grace Park
+2024-12-01,Analytics Pro,East,Partner,152,67349.9,29513.29,37836.61,13.4,Frank Chen
+2024-12-01,Analytics Pro,West,Partner,74,71321.61,25107.05,46214.56,13.7,Eva Martinez
+2024-12-01,Analytics Pro,International,Online,414,497751.52,194389.67,303361.85,10.3,Henry Wilson
+2024-12-01,DataBridge,North,Reseller,431,193483.06,94753.82,98729.24,14.6,Frank Chen
+2024-12-01,DataBridge,South,Direct,782,1130398.81,542130.99,588267.82,1.0,Alice Nguyen
+2024-12-01,DataBridge,East,Partner,700,1163759.79,527392.4,636367.39,3.8,Henry Wilson
+2024-12-01,DataBridge,West,Partner,269,80131.75,32846.2,47285.55,3.5,Eva Martinez
+2024-12-01,DataBridge,International,Online,295,516067.65,215950.48,300117.17,9.9,Alice Nguyen
+2024-12-01,ReportMaster,North,Online,347,646711.38,332618.3,314093.08,8.4,Henry Wilson
+2024-12-01,ReportMaster,South,Direct,397,480962.98,199963.78,280999.2,4.8,David Kim
+2024-12-01,ReportMaster,East,Direct,71,60765.41,31950.07,28815.34,5.1,Alice Nguyen
+2024-12-01,ReportMaster,West,Direct,356,514556.49,237647.12,276909.37,0.0,Alice Nguyen
+2024-12-01,ReportMaster,International,Direct,278,65829.67,33465.79,32363.88,6.8,Henry Wilson
+2024-12-01,CloudSync,North,Online,220,358036.23,169688.74,188347.49,4.5,David Kim
+2024-12-01,CloudSync,South,Online,549,514470.21,236931.18,277539.03,6.5,Eva Martinez
+2024-12-01,CloudSync,East,Reseller,975,970970.72,476793.24,494177.48,12.6,Henry Wilson
+2024-12-01,CloudSync,West,Partner,311,178999.66,80491.66,98508.0,8.8,Frank Chen
+2024-12-01,CloudSync,International,Reseller,102,170283.16,84019.65,86263.51,11.4,Carol Lee
+2024-12-01,InsightHub,North,Online,336,457219.26,225699.5,231519.76,8.5,Alice Nguyen
+2024-12-01,InsightHub,South,Partner,486,936197.36,460097.41,476099.95,14.8,Bob Carter
+2024-12-01,InsightHub,East,Reseller,741,872922.12,439145.56,433776.56,7.8,Bob Carter
+2024-12-01,InsightHub,West,Partner,305,298346.59,110900.59,187446.0,2.3,David Kim
+2024-12-01,InsightHub,International,Reseller,45,22314.68,10957.07,11357.61,11.9,David Kim
+2024-12-01,AutoReport,North,Partner,119,214179.99,98269.98,115910.01,13.3,David Kim
+2024-12-01,AutoReport,South,Direct,484,196504.76,102259.7,94245.06,13.0,Henry Wilson
+2024-12-01,AutoReport,East,Partner,334,547223.4,246062.19,301161.21,13.9,Eva Martinez
+2024-12-01,AutoReport,West,Partner,132,70224.36,38249.08,31975.28,12.2,Henry Wilson
+2024-12-01,AutoReport,International,Reseller,671,1054481.01,398688.76,655792.25,4.6,Henry Wilson
+2024-12-01,PulseBoard,North,Online,237,365336.95,133253.88,232083.07,11.5,Carol Lee
+2024-12-01,PulseBoard,South,Partner,549,901064.56,385736.1,515328.46,7.3,Frank Chen
+2024-12-01,PulseBoard,East,Reseller,184,65548.31,23523.94,42024.37,15.0,Grace Park
+2024-12-01,PulseBoard,West,Partner,930,666162.72,250480.51,415682.21,7.5,Henry Wilson
+2024-12-01,PulseBoard,International,Direct,128,71439.63,28229.78,43209.85,9.8,Bob Carter
+2025-01-01,Enterprise Suite,North,Online,289,419095.96,177319.78,241776.18,2.4,Grace Park
+2025-01-01,Enterprise Suite,South,Online,471,802547.95,388183.39,414364.56,8.4,David Kim
+2025-01-01,Enterprise Suite,East,Reseller,458,179306.83,97368.71,81938.12,9.0,Grace Park
+2025-01-01,Enterprise Suite,West,Online,50,82409.14,37650.73,44758.41,4.1,Bob Carter
+2025-01-01,Enterprise Suite,International,Partner,55,85831.9,36050.14,49781.76,5.8,Carol Lee
+2025-01-01,Analytics Pro,North,Direct,353,199681.24,82574.39,117106.85,1.2,Carol Lee
+2025-01-01,Analytics Pro,South,Partner,133,77514.32,41211.97,36302.35,13.4,Bob Carter
+2025-01-01,Analytics Pro,East,Partner,145,128179.58,59624.57,68555.01,5.4,Bob Carter
+2025-01-01,Analytics Pro,West,Reseller,184,327697.84,135800.22,191897.62,8.6,Carol Lee
+2025-01-01,Analytics Pro,International,Online,314,338078.11,130800.5,207277.61,1.4,David Kim
+2025-01-01,DataBridge,North,Partner,270,72910.66,34272.0,38638.66,1.4,Grace Park
+2025-01-01,DataBridge,South,Partner,277,67754.25,29541.21,38213.04,13.3,Alice Nguyen
+2025-01-01,DataBridge,East,Direct,165,78470.81,32663.9,45806.91,10.1,Grace Park
+2025-01-01,DataBridge,West,Online,643,1001697.5,521319.28,480378.22,12.5,Henry Wilson
+2025-01-01,DataBridge,International,Online,532,717623.65,325074.86,392548.79,12.8,Bob Carter
+2025-01-01,ReportMaster,North,Online,394,582062.16,291836.6,290225.56,14.0,Bob Carter
+2025-01-01,ReportMaster,South,Direct,420,821071.8,329252.66,491819.14,10.9,Henry Wilson
+2025-01-01,ReportMaster,East,Reseller,43,48132.55,17714.1,30418.45,10.8,Grace Park
+2025-01-01,ReportMaster,West,Direct,144,50795.31,22975.04,27820.27,6.8,Bob Carter
+2025-01-01,ReportMaster,International,Reseller,126,235635.9,90252.25,145383.65,14.8,Carol Lee
+2025-01-01,CloudSync,North,Online,89,144362.77,65325.68,79037.09,5.1,Bob Carter
+2025-01-01,CloudSync,South,Partner,286,478211.64,243163.46,235048.18,7.4,Frank Chen
+2025-01-01,CloudSync,East,Online,215,75885.23,39249.6,36635.63,14.0,David Kim
+2025-01-01,CloudSync,West,Direct,318,263370.02,128953.58,134416.44,3.3,Bob Carter
+2025-01-01,CloudSync,International,Partner,71,97664.91,46857.9,50807.01,11.7,Frank Chen
+2025-01-01,InsightHub,North,Online,31,16143.94,5715.42,10428.52,2.4,Carol Lee
+2025-01-01,InsightHub,South,Online,498,608536.58,229729.42,378807.16,8.5,Bob Carter
+2025-01-01,InsightHub,East,Direct,68,97545.65,50547.07,46998.58,11.5,Carol Lee
+2025-01-01,InsightHub,West,Online,171,201945.75,81616.01,120329.74,4.9,Grace Park
+2025-01-01,InsightHub,International,Reseller,440,460384.36,187865.29,272519.07,6.6,David Kim
+2025-01-01,AutoReport,North,Partner,241,344294.44,164760.4,179534.04,9.8,Alice Nguyen
+2025-01-01,AutoReport,South,Partner,349,218223.29,88742.94,129480.35,6.4,Frank Chen
+2025-01-01,AutoReport,East,Partner,132,78645.87,40176.9,38468.97,6.6,Frank Chen
+2025-01-01,AutoReport,West,Partner,248,203032.18,109607.04,93425.14,4.9,Frank Chen
+2025-01-01,AutoReport,International,Online,237,205510.02,80300.55,125209.47,1.7,Grace Park
+2025-01-01,PulseBoard,North,Direct,137,32327.05,14020.8,18306.25,10.8,Henry Wilson
+2025-01-01,PulseBoard,South,Partner,425,839972.53,436683.5,403289.03,13.9,David Kim
+2025-01-01,PulseBoard,East,Online,252,469807.26,222696.24,247111.02,4.7,Eva Martinez
+2025-01-01,PulseBoard,West,Direct,98,162535.39,79800.76,82734.63,8.0,Alice Nguyen
+2025-01-01,PulseBoard,International,Online,359,601609.77,272084.75,329525.02,7.1,Eva Martinez
+2025-02-01,Enterprise Suite,North,Reseller,292,331029.63,151932.67,179096.96,9.9,Grace Park
+2025-02-01,Enterprise Suite,South,Online,188,107768.37,49790.23,57978.14,8.0,Henry Wilson
+2025-02-01,Enterprise Suite,East,Partner,352,441758.91,199689.72,242069.19,0.5,Eva Martinez
+2025-02-01,Enterprise Suite,West,Online,135,49652.03,18103.54,31548.49,2.8,David Kim
+2025-02-01,Enterprise Suite,International,Reseller,90,51981.23,19140.86,32840.37,13.1,Grace Park
+2025-02-01,Analytics Pro,North,Online,473,153294.62,71844.29,81450.33,14.8,Frank Chen
+2025-02-01,Analytics Pro,South,Direct,255,110545.2,54052.14,56493.06,4.1,Henry Wilson
+2025-02-01,Analytics Pro,East,Online,78,35725.25,19319.14,16406.11,2.2,David Kim
+2025-02-01,Analytics Pro,West,Reseller,116,34636.83,13088.55,21548.28,7.4,Henry Wilson
+2025-02-01,Analytics Pro,International,Partner,73,63491.1,23134.06,40357.04,3.3,Bob Carter
+2025-02-01,DataBridge,North,Direct,441,424045.97,155258.53,268787.44,4.9,Alice Nguyen
+2025-02-01,DataBridge,South,Direct,137,71875.23,35450.3,36424.93,5.4,Carol Lee
+2025-02-01,DataBridge,East,Reseller,268,292533.02,111306.85,181226.17,2.4,Bob Carter
+2025-02-01,DataBridge,West,Partner,141,171634.59,78892.31,92742.28,3.8,Alice Nguyen
+2025-02-01,DataBridge,International,Reseller,157,86050.7,35536.85,50513.85,13.5,Frank Chen
+2025-02-01,ReportMaster,North,Reseller,432,790272.89,357341.98,432930.91,5.3,David Kim
+2025-02-01,ReportMaster,South,Reseller,188,143629.32,74596.29,69033.03,5.7,Alice Nguyen
+2025-02-01,ReportMaster,East,Reseller,355,378077.77,151972.01,226105.76,3.6,Henry Wilson
+2025-02-01,ReportMaster,West,Online,151,212044.37,97420.23,114624.14,6.7,Frank Chen
+2025-02-01,ReportMaster,International,Reseller,93,152533.07,82880.98,69652.09,10.6,David Kim
+2025-02-01,CloudSync,North,Reseller,74,52271.18,25562.85,26708.33,13.7,Henry Wilson
+2025-02-01,CloudSync,South,Direct,464,117080.61,50499.17,66581.44,9.7,Bob Carter
+2025-02-01,CloudSync,East,Online,164,113744.55,56400.72,57343.83,4.6,David Kim
+2025-02-01,CloudSync,West,Partner,141,73410.45,27175.83,46234.62,11.5,Alice Nguyen
+2025-02-01,CloudSync,International,Partner,206,260371.58,123509.66,136861.92,10.3,Eva Martinez
+2025-02-01,InsightHub,North,Reseller,202,370336.16,136689.85,233646.31,10.7,Carol Lee
+2025-02-01,InsightHub,South,Direct,484,817927.67,412368.1,405559.57,7.5,Carol Lee
+2025-02-01,InsightHub,East,Reseller,314,336102.45,181565.56,154536.89,12.0,Carol Lee
+2025-02-01,InsightHub,West,Partner,493,558957.02,249213.6,309743.42,12.0,Eva Martinez
+2025-02-01,InsightHub,International,Reseller,130,145176.27,51403.1,93773.17,7.5,Eva Martinez
+2025-02-01,AutoReport,North,Direct,545,627922.75,223977.98,403944.77,5.7,Eva Martinez
+2025-02-01,AutoReport,South,Online,139,131802.68,52720.72,79081.96,8.1,David Kim
+2025-02-01,AutoReport,East,Online,223,408949.14,148946.42,260002.72,6.8,Bob Carter
+2025-02-01,AutoReport,West,Direct,124,167370.24,66910.6,100459.64,0.3,David Kim
+2025-02-01,AutoReport,International,Reseller,178,262071.27,143912.23,118159.04,4.4,Frank Chen
+2025-02-01,PulseBoard,North,Reseller,488,887120.76,439257.89,447862.87,1.9,Frank Chen
+2025-02-01,PulseBoard,South,Reseller,457,177061.19,66713.67,110347.52,1.0,Henry Wilson
+2025-02-01,PulseBoard,East,Online,232,163242.72,74084.14,89158.58,1.8,Grace Park
+2025-02-01,PulseBoard,West,Direct,162,267497.1,99285.0,168212.1,9.2,Alice Nguyen
+2025-02-01,PulseBoard,International,Partner,215,121361.83,59449.6,61912.23,5.4,David Kim
+2025-03-01,Enterprise Suite,North,Direct,169,240347.44,87542.65,152804.79,14.6,Carol Lee
+2025-03-01,Enterprise Suite,South,Partner,109,64652.3,33913.37,30738.93,9.0,Bob Carter
+2025-03-01,Enterprise Suite,East,Reseller,94,24342.52,12085.18,12257.34,11.6,Frank Chen
+2025-03-01,Enterprise Suite,West,Direct,263,423278.28,218252.68,205025.6,7.1,Frank Chen
+2025-03-01,Enterprise Suite,International,Online,207,49145.17,19125.06,30020.11,12.0,Carol Lee
+2025-03-01,Analytics Pro,North,Online,32,10469.48,3728.14,6741.34,7.0,Grace Park
+2025-03-01,Analytics Pro,South,Partner,533,378239.79,194184.38,184055.41,10.3,Frank Chen
+2025-03-01,Analytics Pro,East,Partner,89,177720.6,79210.51,98510.09,12.1,Grace Park
+2025-03-01,Analytics Pro,West,Partner,176,306614.18,125043.6,181570.58,10.5,Henry Wilson
+2025-03-01,Analytics Pro,International,Direct,74,35615.69,18946.08,16669.61,3.2,Henry Wilson
+2025-03-01,DataBridge,North,Partner,309,103471.45,48422.42,55049.03,12.1,David Kim
+2025-03-01,DataBridge,South,Online,193,202498.36,99785.55,102712.81,15.0,Frank Chen
+2025-03-01,DataBridge,East,Online,82,67212.45,36160.06,31052.39,9.4,Alice Nguyen
+2025-03-01,DataBridge,West,Partner,224,421694.08,214040.1,207653.98,12.8,Eva Martinez
+2025-03-01,DataBridge,International,Reseller,369,112931.57,44078.36,68853.21,8.3,Carol Lee
+2025-03-01,ReportMaster,North,Direct,764,1445103.29,525329.73,919773.56,7.1,Alice Nguyen
+2025-03-01,ReportMaster,South,Direct,140,156840.1,80352.22,76487.88,1.9,Alice Nguyen
+2025-03-01,ReportMaster,East,Direct,141,222619.28,116971.98,105647.3,7.8,Henry Wilson
+2025-03-01,ReportMaster,West,Online,166,48723.41,25750.14,22973.27,10.4,Grace Park
+2025-03-01,ReportMaster,International,Reseller,320,376104.92,181242.5,194862.42,14.7,Bob Carter
+2025-03-01,CloudSync,North,Reseller,233,108093.75,47171.38,60922.37,4.3,Henry Wilson
+2025-03-01,CloudSync,South,Direct,88,132217.44,51438.97,80778.47,13.4,Bob Carter
+2025-03-01,CloudSync,East,Direct,53,55590.91,28818.54,26772.37,13.7,Eva Martinez
+2025-03-01,CloudSync,West,Online,233,365468.05,165844.32,199623.73,9.8,Bob Carter
+2025-03-01,CloudSync,International,Direct,134,64671.13,32701.64,31969.49,12.0,Grace Park
+2025-03-01,InsightHub,North,Partner,223,413575.75,175819.82,237755.93,13.1,Eva Martinez
+2025-03-01,InsightHub,South,Reseller,50,23558.75,9456.58,14102.17,11.6,Henry Wilson
+2025-03-01,InsightHub,East,Partner,53,27801.71,13142.39,14659.32,3.4,Carol Lee
+2025-03-01,InsightHub,West,Online,189,118379.98,42139.3,76240.68,4.6,Grace Park
+2025-03-01,InsightHub,International,Reseller,75,126879.57,50403.93,76475.64,4.4,Eva Martinez
+2025-03-01,AutoReport,North,Online,94,173108.31,64383.67,108724.64,6.9,Frank Chen
+2025-03-01,AutoReport,South,Online,120,234311.44,112629.05,121682.39,9.9,Grace Park
+2025-03-01,AutoReport,East,Online,136,38201.66,19670.05,18531.61,6.3,Frank Chen
+2025-03-01,AutoReport,West,Online,539,268398.66,129289.11,139109.55,14.9,Bob Carter
+2025-03-01,AutoReport,International,Reseller,158,43117.9,19365.58,23752.32,9.8,Carol Lee
+2025-03-01,PulseBoard,North,Partner,209,281032.83,142787.91,138244.92,3.6,David Kim
+2025-03-01,PulseBoard,South,Online,411,295548.48,134984.08,160564.4,7.9,Grace Park
+2025-03-01,PulseBoard,East,Reseller,55,58412.92,26214.66,32198.26,12.8,Carol Lee
+2025-03-01,PulseBoard,West,Direct,202,207799.84,78159.56,129640.28,6.0,Grace Park
+2025-03-01,PulseBoard,International,Online,382,431016.07,226492.66,204523.41,1.8,Eva Martinez
+2025-04-01,Enterprise Suite,North,Partner,77,121177.73,48356.36,72821.37,1.3,Eva Martinez
+2025-04-01,Enterprise Suite,South,Online,128,192453.77,93586.02,98867.75,3.5,Eva Martinez
+2025-04-01,Enterprise Suite,East,Reseller,282,300799.47,135549.8,165249.67,1.4,Alice Nguyen
+2025-04-01,Enterprise Suite,West,Partner,423,107161.72,58717.3,48444.42,7.4,Alice Nguyen
+2025-04-01,Enterprise Suite,International,Direct,250,376568.78,153169.96,223398.82,1.1,David Kim
+2025-04-01,Analytics Pro,North,Partner,87,137942.88,68257.1,69685.78,0.4,Frank Chen
+2025-04-01,Analytics Pro,South,Online,356,592507.81,226385.01,366122.8,9.9,Henry Wilson
+2025-04-01,Analytics Pro,East,Reseller,191,339487.3,129870.85,209616.45,5.5,Carol Lee
+2025-04-01,Analytics Pro,West,Online,469,506807.18,185018.14,321789.04,10.2,Frank Chen
+2025-04-01,Analytics Pro,International,Reseller,556,617362.88,328774.98,288587.9,9.7,Grace Park
+2025-04-01,DataBridge,North,Direct,307,173424.04,68028.69,105395.35,14.7,Grace Park
+2025-04-01,DataBridge,South,Online,158,294105.37,160969.17,133136.2,9.8,Eva Martinez
+2025-04-01,DataBridge,East,Online,364,142500.6,77613.12,64887.48,13.0,David Kim
+2025-04-01,DataBridge,West,Online,334,148579.7,68326.4,80253.3,6.7,Carol Lee
+2025-04-01,DataBridge,International,Partner,299,543965.07,202275.71,341689.36,9.3,Carol Lee
+2025-04-01,ReportMaster,North,Reseller,126,126624.73,52573.67,74051.06,4.1,Carol Lee
+2025-04-01,ReportMaster,South,Partner,190,98140.61,38685.61,59455.0,3.0,Alice Nguyen
+2025-04-01,ReportMaster,East,Direct,160,296498.11,116528.25,179969.86,4.7,Henry Wilson
+2025-04-01,ReportMaster,West,Reseller,420,178083.33,77171.78,100911.55,13.1,David Kim
+2025-04-01,ReportMaster,International,Reseller,125,231197.48,101947.42,129250.06,1.2,Frank Chen
+2025-04-01,CloudSync,North,Online,327,580364.49,234896.77,345467.72,2.4,David Kim
+2025-04-01,CloudSync,South,Online,174,69679.51,26232.74,43446.77,1.2,Bob Carter
+2025-04-01,CloudSync,East,Reseller,311,474857.55,260878.14,213979.41,5.2,Alice Nguyen
+2025-04-01,CloudSync,West,Online,81,51857.26,25690.25,26167.01,12.8,David Kim
+2025-04-01,CloudSync,International,Online,253,289644.19,146312.36,143331.83,14.7,Henry Wilson
+2025-04-01,InsightHub,North,Online,308,109526.45,47707.41,61819.04,2.5,Carol Lee
+2025-04-01,InsightHub,South,Direct,200,364425.31,168869.53,195555.78,2.9,Grace Park
+2025-04-01,InsightHub,East,Online,250,294380.01,118772.48,175607.53,9.2,David Kim
+2025-04-01,InsightHub,West,Reseller,100,128931.83,55699.32,73232.51,4.7,David Kim
+2025-04-01,InsightHub,International,Reseller,129,184113.89,66263.88,117850.01,2.0,Frank Chen
+2025-04-01,AutoReport,North,Online,186,132927.67,48427.87,84499.8,0.5,Eva Martinez
+2025-04-01,AutoReport,South,Online,615,709489.28,299987.44,409501.84,7.2,Bob Carter
+2025-04-01,AutoReport,East,Reseller,472,149807.23,80360.0,69447.23,7.5,Grace Park
+2025-04-01,AutoReport,West,Partner,430,595924.18,276466.52,319457.66,3.2,Carol Lee
+2025-04-01,AutoReport,International,Partner,352,353353.82,124101.97,229251.85,1.1,David Kim
+2025-04-01,PulseBoard,North,Online,155,309343.96,164960.89,144383.07,8.8,Carol Lee
+2025-04-01,PulseBoard,South,Online,389,557122.91,249711.61,307411.3,0.3,Grace Park
+2025-04-01,PulseBoard,East,Online,562,597172.14,309651.58,287520.56,11.4,Bob Carter
+2025-04-01,PulseBoard,West,Partner,95,158326.58,78519.91,79806.67,6.1,Frank Chen
+2025-04-01,PulseBoard,International,Partner,151,168195.26,90509.6,77685.66,6.4,Frank Chen
+2025-05-01,Enterprise Suite,North,Direct,55,65686.09,32377.36,33308.73,4.1,David Kim
+2025-05-01,Enterprise Suite,South,Partner,425,401700.34,203807.99,197892.35,13.6,Bob Carter
+2025-05-01,Enterprise Suite,East,Direct,347,276900.1,142689.27,134210.83,1.1,David Kim
+2025-05-01,Enterprise Suite,West,Direct,111,77131.35,33615.0,43516.35,5.9,David Kim
+2025-05-01,Enterprise Suite,International,Direct,151,240960.37,94055.89,146904.48,11.0,Alice Nguyen
+2025-05-01,Analytics Pro,North,Reseller,122,162799.71,57737.26,105062.45,4.2,David Kim
+2025-05-01,Analytics Pro,South,Reseller,280,389755.32,145399.84,244355.48,4.4,David Kim
+2025-05-01,Analytics Pro,East,Direct,319,463373.59,216346.45,247027.14,7.8,Bob Carter
+2025-05-01,Analytics Pro,West,Online,273,233208.09,88606.68,144601.41,9.0,Grace Park
+2025-05-01,Analytics Pro,International,Partner,527,764713.41,327883.84,436829.57,15.0,Alice Nguyen
+2025-05-01,DataBridge,North,Online,117,169133.8,75464.39,93669.41,3.3,Henry Wilson
+2025-05-01,DataBridge,South,Partner,607,317943.95,167135.69,150808.26,10.7,Carol Lee
+2025-05-01,DataBridge,East,Reseller,255,150470.95,56293.51,94177.44,7.0,Alice Nguyen
+2025-05-01,DataBridge,West,Online,248,347761.22,185732.35,162028.87,6.1,Frank Chen
+2025-05-01,DataBridge,International,Reseller,126,132789.87,55542.11,77247.76,3.2,Frank Chen
+2025-05-01,ReportMaster,North,Online,389,629251.31,251815.0,377436.31,9.5,Frank Chen
+2025-05-01,ReportMaster,South,Partner,133,71573.86,37337.83,34236.03,0.8,Bob Carter
+2025-05-01,ReportMaster,East,Partner,122,196366.19,94475.47,101890.72,10.4,Eva Martinez
+2025-05-01,ReportMaster,West,Partner,124,75642.1,30055.39,45586.71,12.9,Eva Martinez
+2025-05-01,ReportMaster,International,Direct,396,425876.28,169813.63,256062.65,3.5,Bob Carter
+2025-05-01,CloudSync,North,Online,49,64592.77,30702.95,33889.82,1.1,Bob Carter
+2025-05-01,CloudSync,South,Online,116,66688.86,34169.79,32519.07,13.7,David Kim
+2025-05-01,CloudSync,East,Direct,295,222123.8,92528.13,129595.67,9.5,Eva Martinez
+2025-05-01,CloudSync,West,Direct,165,242019.63,101907.68,140111.95,8.9,Grace Park
+2025-05-01,CloudSync,International,Online,115,150352.62,59183.28,91169.34,9.9,Carol Lee
+2025-05-01,InsightHub,North,Reseller,138,189253.71,92805.54,96448.17,6.0,Grace Park
+2025-05-01,InsightHub,South,Direct,104,57672.12,23544.8,34127.32,7.6,Grace Park
+2025-05-01,InsightHub,East,Online,211,376087.29,178981.19,197106.1,9.5,Grace Park
+2025-05-01,InsightHub,West,Online,227,55832.31,19624.57,36207.74,12.8,Alice Nguyen
+2025-05-01,InsightHub,International,Direct,267,144760.03,76274.49,68485.54,11.4,Henry Wilson
+2025-05-01,AutoReport,North,Direct,96,61671.59,33905.7,27765.89,3.4,Grace Park
+2025-05-01,AutoReport,South,Reseller,509,613556.4,229505.15,384051.25,12.3,David Kim
+2025-05-01,AutoReport,East,Partner,166,49779.21,19101.47,30677.74,2.4,Henry Wilson
+2025-05-01,AutoReport,West,Online,475,400652.39,162364.07,238288.32,7.5,Eva Martinez
+2025-05-01,AutoReport,International,Online,152,299708.31,118284.24,181424.07,7.3,David Kim
+2025-05-01,PulseBoard,North,Direct,232,220414.35,79418.8,140995.55,14.0,Eva Martinez
+2025-05-01,PulseBoard,South,Direct,239,172760.34,74709.54,98050.8,11.4,Grace Park
+2025-05-01,PulseBoard,East,Online,85,115449.72,59524.12,55925.6,12.9,Frank Chen
+2025-05-01,PulseBoard,West,Direct,112,188814.52,83098.77,105715.75,2.5,Grace Park
+2025-05-01,PulseBoard,International,Online,340,529061.59,284216.91,244844.68,1.8,Eva Martinez
+2025-06-01,Enterprise Suite,North,Direct,663,736637.21,349553.46,387083.75,4.6,Alice Nguyen
+2025-06-01,Enterprise Suite,South,Online,375,219327.25,116975.78,102351.47,14.6,David Kim
+2025-06-01,Enterprise Suite,East,Direct,88,156121.69,70255.89,85865.8,0.8,Bob Carter
+2025-06-01,Enterprise Suite,West,Direct,72,55738.46,29869.41,25869.05,5.0,Eva Martinez
+2025-06-01,Enterprise Suite,International,Online,534,372863.32,179603.3,193260.02,1.3,Henry Wilson
+2025-06-01,Analytics Pro,North,Online,104,131160.13,57847.66,73312.47,4.5,Carol Lee
+2025-06-01,Analytics Pro,South,Reseller,381,521179.23,258868.76,262310.47,5.5,Carol Lee
+2025-06-01,Analytics Pro,East,Partner,222,378949.2,136183.51,242765.69,2.6,Frank Chen
+2025-06-01,Analytics Pro,West,Reseller,30,34528.98,16628.41,17900.57,5.8,Eva Martinez
+2025-06-01,Analytics Pro,International,Direct,117,135118.06,71475.23,63642.83,8.6,Alice Nguyen
+2025-06-01,DataBridge,North,Partner,218,389051.26,211972.31,177078.95,6.6,Carol Lee
+2025-06-01,DataBridge,South,Online,448,226873.71,100240.84,126632.87,2.6,Bob Carter
+2025-06-01,DataBridge,East,Partner,69,22889.04,10076.62,12812.42,3.7,Bob Carter
+2025-06-01,DataBridge,West,Reseller,175,46927.83,19173.27,27754.56,1.8,David Kim
+2025-06-01,DataBridge,International,Online,60,63895.48,28015.39,35880.09,2.1,Alice Nguyen
+2025-06-01,ReportMaster,North,Direct,36,33505.2,14440.92,19064.28,10.7,Henry Wilson
+2025-06-01,ReportMaster,South,Partner,155,188587.11,71237.18,117349.93,4.4,Alice Nguyen
+2025-06-01,ReportMaster,East,Online,59,33194.69,12301.55,20893.14,12.3,Eva Martinez
+2025-06-01,ReportMaster,West,Direct,120,186372.89,97876.21,88496.68,9.0,Carol Lee
+2025-06-01,ReportMaster,International,Online,136,65110.81,34322.03,30788.78,5.5,Eva Martinez
+2025-06-01,CloudSync,North,Online,97,105023.56,56845.89,48177.67,13.1,Eva Martinez
+2025-06-01,CloudSync,South,Reseller,515,770147.07,296935.76,473211.31,11.0,Eva Martinez
+2025-06-01,CloudSync,East,Reseller,584,326749.34,121700.16,205049.18,11.8,Eva Martinez
+2025-06-01,CloudSync,West,Partner,282,494288.31,239054.28,255234.03,11.4,David Kim
+2025-06-01,CloudSync,International,Reseller,314,115114.31,53045.12,62069.19,9.2,Grace Park
+2025-06-01,InsightHub,North,Partner,33,24096.23,9320.11,14776.12,4.2,Henry Wilson
+2025-06-01,InsightHub,South,Online,165,135473.31,58146.74,77326.57,0.6,Alice Nguyen
+2025-06-01,InsightHub,East,Reseller,329,577357.14,206827.02,370530.12,2.2,Frank Chen
+2025-06-01,InsightHub,West,Partner,171,140023.62,70455.42,69568.2,11.1,Carol Lee
+2025-06-01,InsightHub,International,Direct,130,181809.77,93793.06,88016.71,4.2,Frank Chen
+2025-06-01,AutoReport,North,Reseller,190,139957.82,50928.31,89029.51,10.9,Grace Park
+2025-06-01,AutoReport,South,Partner,195,269872.47,129589.73,140282.74,13.6,Grace Park
+2025-06-01,AutoReport,East,Online,523,875680.82,419381.99,456298.83,1.2,Grace Park
+2025-06-01,AutoReport,West,Direct,314,505951.22,260891.22,245060.0,4.7,David Kim
+2025-06-01,AutoReport,International,Partner,97,132927.06,64650.12,68276.94,3.8,Frank Chen
+2025-06-01,PulseBoard,North,Partner,441,710073.63,275358.85,434714.78,3.6,Frank Chen
+2025-06-01,PulseBoard,South,Direct,188,352373.56,162928.92,189444.64,5.8,Grace Park
+2025-06-01,PulseBoard,East,Reseller,164,128945.11,62869.43,66075.68,0.6,Carol Lee
+2025-06-01,PulseBoard,West,Partner,227,271254.08,134506.78,136747.3,5.3,Bob Carter
+2025-06-01,PulseBoard,International,Direct,113,89965.96,34883.99,55081.97,10.9,Grace Park
+2025-07-01,Enterprise Suite,North,Online,246,205688.61,87820.59,117868.02,7.3,Grace Park
+2025-07-01,Enterprise Suite,South,Reseller,411,686904.78,367883.97,319020.81,9.0,Henry Wilson
+2025-07-01,Enterprise Suite,East,Direct,232,351946.55,129646.41,222300.14,12.4,David Kim
+2025-07-01,Enterprise Suite,West,Direct,197,329711.67,164114.6,165597.07,14.4,Grace Park
+2025-07-01,Enterprise Suite,International,Online,180,180374.41,63342.08,117032.33,8.6,Eva Martinez
+2025-07-01,Analytics Pro,North,Partner,151,205768.55,79917.32,125851.23,1.0,Bob Carter
+2025-07-01,Analytics Pro,South,Partner,159,47598.88,24368.43,23230.45,11.9,David Kim
+2025-07-01,Analytics Pro,East,Direct,203,385713.3,151024.56,234688.74,10.2,Alice Nguyen
+2025-07-01,Analytics Pro,West,Direct,91,181813.8,64577.58,117236.22,0.0,David Kim
+2025-07-01,Analytics Pro,International,Online,472,216044.67,93422.25,122622.42,11.2,Henry Wilson
+2025-07-01,DataBridge,North,Partner,156,272808.65,109151.23,163657.42,14.5,Carol Lee
+2025-07-01,DataBridge,South,Online,148,59627.56,28335.6,31291.96,13.1,Eva Martinez
+2025-07-01,DataBridge,East,Partner,154,194760.38,72105.87,122654.51,8.1,Alice Nguyen
+2025-07-01,DataBridge,West,Online,155,84775.27,32139.71,52635.56,8.6,Bob Carter
+2025-07-01,DataBridge,International,Partner,175,123735.67,65957.19,57778.48,4.6,Bob Carter
+2025-07-01,ReportMaster,North,Direct,408,462617.18,193998.75,268618.43,12.6,Grace Park
+2025-07-01,ReportMaster,South,Online,312,62990.79,34163.88,28826.91,8.2,Alice Nguyen
+2025-07-01,ReportMaster,East,Partner,103,135857.32,65779.98,70077.34,6.8,Henry Wilson
+2025-07-01,ReportMaster,West,Reseller,92,128041.82,67324.49,60717.33,4.5,Eva Martinez
+2025-07-01,ReportMaster,International,Online,137,52355.78,20153.67,32202.11,14.0,Carol Lee
+2025-07-01,CloudSync,North,Reseller,118,210350.2,79850.33,130499.87,0.3,Frank Chen
+2025-07-01,CloudSync,South,Partner,113,160248.64,83351.43,76897.21,11.3,Henry Wilson
+2025-07-01,CloudSync,East,Online,252,375501.02,202814.74,172686.28,8.5,Alice Nguyen
+2025-07-01,CloudSync,West,Online,377,472118.53,166132.44,305986.09,8.5,Grace Park
+2025-07-01,CloudSync,International,Direct,433,456813.01,208458.07,248354.94,1.0,Carol Lee
+2025-07-01,InsightHub,North,Reseller,121,154433.62,67306.86,87126.76,10.6,Alice Nguyen
+2025-07-01,InsightHub,South,Partner,71,94346.7,37301.69,57045.01,6.6,Alice Nguyen
+2025-07-01,InsightHub,East,Reseller,102,138206.15,65359.46,72846.69,0.2,Carol Lee
+2025-07-01,InsightHub,West,Reseller,463,345668.92,150108.36,195560.56,2.7,Henry Wilson
+2025-07-01,InsightHub,International,Online,107,158416.77,56970.11,101446.66,8.4,Carol Lee
+2025-07-01,AutoReport,North,Direct,366,483443.99,191206.82,292237.17,8.7,Grace Park
+2025-07-01,AutoReport,South,Direct,76,96017.85,40526.87,55490.98,4.3,David Kim
+2025-07-01,AutoReport,East,Reseller,254,392202.61,170100.69,222101.92,0.2,Carol Lee
+2025-07-01,AutoReport,West,Partner,246,444128.1,213818.35,230309.75,12.5,Carol Lee
+2025-07-01,AutoReport,International,Reseller,329,371310.3,197075.96,174234.34,2.5,Henry Wilson
+2025-07-01,PulseBoard,North,Partner,342,175088.87,81733.18,93355.69,6.3,Carol Lee
+2025-07-01,PulseBoard,South,Reseller,30,54170.13,24871.03,29299.1,1.6,Bob Carter
+2025-07-01,PulseBoard,East,Partner,226,411597.32,214367.19,197230.13,0.8,Alice Nguyen
+2025-07-01,PulseBoard,West,Online,157,182961.38,79205.74,103755.64,13.6,David Kim
+2025-07-01,PulseBoard,International,Reseller,318,626272.35,305125.84,321146.51,1.6,Eva Martinez
+2025-08-01,Enterprise Suite,North,Online,256,97431.75,48976.74,48455.01,1.0,Carol Lee
+2025-08-01,Enterprise Suite,South,Direct,682,532345.71,282815.39,249530.32,4.5,Frank Chen
+2025-08-01,Enterprise Suite,East,Direct,288,138419.23,74809.97,63609.26,9.2,Henry Wilson
+2025-08-01,Enterprise Suite,West,Partner,78,126200.48,66809.09,59391.39,10.2,Frank Chen
+2025-08-01,Enterprise Suite,International,Partner,110,213547.84,76313.43,137234.41,5.7,Carol Lee
+2025-08-01,Analytics Pro,North,Reseller,135,146849.87,58437.02,88412.85,0.8,Bob Carter
+2025-08-01,Analytics Pro,South,Partner,173,180954.86,78291.66,102663.2,5.4,Grace Park
+2025-08-01,Analytics Pro,East,Partner,154,98104.42,44677.19,53427.23,3.4,Henry Wilson
+2025-08-01,Analytics Pro,West,Online,81,28975.42,15910.55,13064.87,14.9,Bob Carter
+2025-08-01,Analytics Pro,International,Online,349,581573.35,297971.91,283601.44,6.9,Henry Wilson
+2025-08-01,DataBridge,North,Reseller,257,408491.18,194071.23,214419.95,7.8,Eva Martinez
+2025-08-01,DataBridge,South,Reseller,424,665042.1,307828.48,357213.62,7.6,Eva Martinez
+2025-08-01,DataBridge,East,Online,605,943142.87,427009.91,516132.96,1.1,Frank Chen
+2025-08-01,DataBridge,West,Partner,209,117757.5,49475.44,68282.06,6.2,Carol Lee
+2025-08-01,DataBridge,International,Partner,639,549022.89,209552.56,339470.33,10.3,Frank Chen
+2025-08-01,ReportMaster,North,Direct,658,525847.38,252760.56,273086.82,8.2,Carol Lee
+2025-08-01,ReportMaster,South,Direct,148,82464.24,35080.19,47384.05,5.0,Eva Martinez
+2025-08-01,ReportMaster,East,Online,379,225524.77,83448.92,142075.85,11.8,Henry Wilson
+2025-08-01,ReportMaster,West,Partner,335,93135.39,47886.11,45249.28,8.7,Frank Chen
+2025-08-01,ReportMaster,International,Partner,306,417023.26,207213.34,209809.92,10.1,Alice Nguyen
+2025-08-01,CloudSync,North,Partner,318,175300.55,83692.28,91608.27,4.3,Eva Martinez
+2025-08-01,CloudSync,South,Direct,124,64172.99,31605.15,32567.84,4.2,Eva Martinez
+2025-08-01,CloudSync,East,Direct,169,183618.45,65809.98,117808.47,3.9,David Kim
+2025-08-01,CloudSync,West,Direct,351,397308.0,206389.64,190918.36,0.4,Eva Martinez
+2025-08-01,CloudSync,International,Partner,390,120912.84,62469.5,58443.34,0.4,Frank Chen
+2025-08-01,InsightHub,North,Direct,362,478691.34,195520.05,283171.29,2.0,Frank Chen
+2025-08-01,InsightHub,South,Partner,342,231004.99,108322.22,122682.77,12.0,Henry Wilson
+2025-08-01,InsightHub,East,Reseller,362,559052.43,229473.48,329578.95,8.4,Alice Nguyen
+2025-08-01,InsightHub,West,Online,225,63604.48,34886.53,28717.95,3.7,Grace Park
+2025-08-01,InsightHub,International,Online,44,39986.69,19238.45,20748.24,12.5,Bob Carter
+2025-08-01,AutoReport,North,Direct,246,65705.32,26468.62,39236.7,0.9,Eva Martinez
+2025-08-01,AutoReport,South,Partner,178,182330.71,65477.9,116852.81,6.5,David Kim
+2025-08-01,AutoReport,East,Direct,197,148922.73,52552.89,96369.84,2.3,Henry Wilson
+2025-08-01,AutoReport,West,Online,115,82300.78,39024.79,43275.99,12.0,Grace Park
+2025-08-01,AutoReport,International,Online,127,246911.54,97333.63,149577.91,11.3,Carol Lee
+2025-08-01,PulseBoard,North,Online,102,172309.29,71906.17,100403.12,10.0,Eva Martinez
+2025-08-01,PulseBoard,South,Partner,133,142293.04,52882.65,89410.39,10.3,Frank Chen
+2025-08-01,PulseBoard,East,Reseller,561,936127.19,488890.06,447237.13,12.3,Eva Martinez
+2025-08-01,PulseBoard,West,Partner,201,62254.73,27998.04,34256.69,9.8,Henry Wilson
+2025-08-01,PulseBoard,International,Reseller,819,178744.8,84943.19,93801.61,1.8,Frank Chen
+2025-09-01,Enterprise Suite,North,Partner,93,177424.5,96837.45,80587.05,13.4,Frank Chen
+2025-09-01,Enterprise Suite,South,Direct,806,330641.58,176814.48,153827.1,2.6,Bob Carter
+2025-09-01,Enterprise Suite,East,Online,133,264585.26,138994.96,125590.3,13.7,Bob Carter
+2025-09-01,Enterprise Suite,West,Online,309,495220.58,272041.21,223179.37,7.9,Alice Nguyen
+2025-09-01,Enterprise Suite,International,Online,124,136876.04,59728.54,77147.5,8.2,Alice Nguyen
+2025-09-01,Analytics Pro,North,Reseller,204,250281.35,128053.19,122228.16,13.3,Bob Carter
+2025-09-01,Analytics Pro,South,Partner,203,162064.49,84922.63,77141.86,7.3,Grace Park
+2025-09-01,Analytics Pro,East,Direct,54,12048.66,4657.99,7390.67,12.2,Alice Nguyen
+2025-09-01,Analytics Pro,West,Direct,251,437012.26,169726.32,267285.94,0.5,Alice Nguyen
+2025-09-01,Analytics Pro,International,Partner,122,77435.26,32501.54,44933.72,10.9,David Kim
+2025-09-01,DataBridge,North,Partner,58,113125.05,48067.95,65057.1,1.0,Alice Nguyen
+2025-09-01,DataBridge,South,Partner,258,443892.64,229506.83,214385.81,6.4,Bob Carter
+2025-09-01,DataBridge,East,Reseller,491,628764.12,230736.04,398028.08,5.7,David Kim
+2025-09-01,DataBridge,West,Online,341,149106.25,77927.45,71178.8,0.0,David Kim
+2025-09-01,DataBridge,International,Direct,81,25868.41,10698.35,15170.06,3.7,Henry Wilson
+2025-09-01,ReportMaster,North,Direct,138,207718.74,83646.49,124072.25,4.9,Frank Chen
+2025-09-01,ReportMaster,South,Reseller,157,157166.97,60958.98,96207.99,2.4,Grace Park
+2025-09-01,ReportMaster,East,Direct,298,234658.44,125233.63,109424.81,11.0,Grace Park
+2025-09-01,ReportMaster,West,Reseller,415,398620.25,147252.74,251367.51,6.8,Eva Martinez
+2025-09-01,ReportMaster,International,Direct,52,42327.15,19644.35,22682.8,13.4,Eva Martinez
+2025-09-01,CloudSync,North,Reseller,326,475107.45,259501.88,215605.57,6.4,Eva Martinez
+2025-09-01,CloudSync,South,Online,212,179464.79,76147.0,103317.79,6.5,Frank Chen
+2025-09-01,CloudSync,East,Direct,109,60730.17,30098.29,30631.88,10.8,Bob Carter
+2025-09-01,CloudSync,West,Online,204,112344.7,50239.86,62104.84,0.7,Bob Carter
+2025-09-01,CloudSync,International,Direct,177,350740.48,158248.49,192491.99,7.5,Carol Lee
+2025-09-01,InsightHub,North,Partner,103,74348.69,26488.83,47859.86,12.7,David Kim
+2025-09-01,InsightHub,South,Partner,84,54248.91,20673.17,33575.74,8.0,Carol Lee
+2025-09-01,InsightHub,East,Partner,301,366343.79,138912.85,227430.94,7.6,Bob Carter
+2025-09-01,InsightHub,West,Partner,104,101997.88,54220.71,47777.17,7.3,Henry Wilson
+2025-09-01,InsightHub,International,Reseller,199,279328.3,144589.66,134738.64,8.5,David Kim
+2025-09-01,AutoReport,North,Reseller,132,66088.28,24335.95,41752.33,14.1,Frank Chen
+2025-09-01,AutoReport,South,Reseller,134,130369.43,54938.13,75431.3,13.7,Bob Carter
+2025-09-01,AutoReport,East,Partner,354,227123.23,119690.11,107433.12,2.1,Frank Chen
+2025-09-01,AutoReport,West,Direct,178,292264.79,104475.0,187789.79,0.4,Alice Nguyen
+2025-09-01,AutoReport,International,Reseller,221,58277.96,28872.63,29405.33,3.2,Frank Chen
+2025-09-01,PulseBoard,North,Partner,244,219888.58,80771.2,139117.38,12.6,Carol Lee
+2025-09-01,PulseBoard,South,Direct,381,687096.43,339382.75,347713.68,13.9,Grace Park
+2025-09-01,PulseBoard,East,Reseller,191,259735.62,105393.49,154342.13,14.5,Grace Park
+2025-09-01,PulseBoard,West,Reseller,147,220581.13,81123.88,139457.25,10.4,David Kim
+2025-09-01,PulseBoard,International,Reseller,212,405695.3,154382.78,251312.52,10.4,Grace Park
+2025-10-01,Enterprise Suite,North,Direct,467,598034.37,236929.38,361104.99,5.7,Frank Chen
+2025-10-01,Enterprise Suite,South,Reseller,407,505607.6,217719.57,287888.03,3.7,Grace Park
+2025-10-01,Enterprise Suite,East,Online,351,541695.8,230659.17,311036.63,6.4,Eva Martinez
+2025-10-01,Enterprise Suite,West,Online,491,876653.64,386040.36,490613.28,4.3,Henry Wilson
+2025-10-01,Enterprise Suite,International,Reseller,716,1327954.22,667487.09,660467.13,6.5,Grace Park
+2025-10-01,Analytics Pro,North,Online,105,110218.65,46252.07,63966.58,9.6,Eva Martinez
+2025-10-01,Analytics Pro,South,Reseller,396,387541.9,151580.59,235961.31,8.3,Alice Nguyen
+2025-10-01,Analytics Pro,East,Partner,204,145194.48,56755.79,88438.69,4.4,Frank Chen
+2025-10-01,Analytics Pro,West,Partner,430,760920.15,366546.07,394374.08,11.3,Eva Martinez
+2025-10-01,Analytics Pro,International,Direct,596,335519.31,126601.63,208917.68,9.4,Henry Wilson
+2025-10-01,DataBridge,North,Reseller,197,320668.14,122207.44,198460.7,8.4,Eva Martinez
+2025-10-01,DataBridge,South,Reseller,64,35227.33,17432.19,17795.14,14.4,Eva Martinez
+2025-10-01,DataBridge,East,Direct,159,248898.21,108718.97,140179.24,14.2,Eva Martinez
+2025-10-01,DataBridge,West,Partner,90,129926.32,54341.39,75584.93,7.9,Henry Wilson
+2025-10-01,DataBridge,International,Partner,323,131142.8,56260.16,74882.64,7.0,Henry Wilson
+2025-10-01,ReportMaster,North,Direct,300,383538.8,164042.27,219496.53,7.6,Henry Wilson
+2025-10-01,ReportMaster,South,Reseller,289,531642.59,275176.05,256466.54,12.2,Grace Park
+2025-10-01,ReportMaster,East,Direct,79,123961.19,50707.9,73253.29,4.3,Frank Chen
+2025-10-01,ReportMaster,West,Reseller,306,321199.05,158916.43,162282.62,7.7,Alice Nguyen
+2025-10-01,ReportMaster,International,Partner,430,516321.55,269035.71,247285.84,3.7,Carol Lee
+2025-10-01,CloudSync,North,Reseller,887,1146867.87,628889.61,517978.26,8.5,Eva Martinez
+2025-10-01,CloudSync,South,Direct,299,246917.09,123822.64,123094.45,7.0,Bob Carter
+2025-10-01,CloudSync,East,Reseller,966,635806.69,306339.2,329467.49,0.3,Carol Lee
+2025-10-01,CloudSync,West,Reseller,411,709461.14,250048.96,459412.18,6.6,Bob Carter
+2025-10-01,CloudSync,International,Online,345,272060.24,126739.8,145320.44,13.2,Henry Wilson
+2025-10-01,InsightHub,North,Reseller,392,484369.51,245710.02,238659.49,2.2,Eva Martinez
+2025-10-01,InsightHub,South,Reseller,130,197205.65,94707.7,102497.95,3.2,Carol Lee
+2025-10-01,InsightHub,East,Online,832,679230.79,373507.57,305723.22,4.5,Bob Carter
+2025-10-01,InsightHub,West,Online,53,105273.35,51681.6,53591.75,0.8,Eva Martinez
+2025-10-01,InsightHub,International,Online,43,66097.87,34930.16,31167.71,3.7,Eva Martinez
+2025-10-01,AutoReport,North,Direct,444,117195.51,54132.83,63062.68,10.8,Henry Wilson
+2025-10-01,AutoReport,South,Online,501,244422.7,104172.2,140250.5,12.8,Alice Nguyen
+2025-10-01,AutoReport,East,Partner,148,123568.45,46168.29,77400.16,14.2,Eva Martinez
+2025-10-01,AutoReport,West,Online,529,961201.54,470856.57,490344.97,8.0,Eva Martinez
+2025-10-01,AutoReport,International,Reseller,507,792798.88,431110.15,361688.73,14.4,Carol Lee
+2025-10-01,PulseBoard,North,Reseller,362,240059.78,84188.72,155871.06,14.5,David Kim
+2025-10-01,PulseBoard,South,Reseller,479,470685.5,240364.92,230320.58,15.0,Grace Park
+2025-10-01,PulseBoard,East,Online,70,16195.56,6038.99,10156.57,4.1,David Kim
+2025-10-01,PulseBoard,West,Online,127,75946.78,28230.79,47715.99,0.2,David Kim
+2025-10-01,PulseBoard,International,Partner,166,70664.96,30554.48,40110.48,12.8,Henry Wilson
+2025-11-01,Enterprise Suite,North,Reseller,238,48830.07,21269.54,27560.53,0.2,Bob Carter
+2025-11-01,Enterprise Suite,South,Reseller,388,550594.64,199366.31,351228.33,13.2,Frank Chen
+2025-11-01,Enterprise Suite,East,Partner,462,676557.07,344216.36,332340.71,5.8,Frank Chen
+2025-11-01,Enterprise Suite,West,Direct,408,155006.75,56484.33,98522.42,0.4,Frank Chen
+2025-11-01,Enterprise Suite,International,Reseller,670,941357.66,428335.58,513022.08,7.8,Henry Wilson
+2025-11-01,Analytics Pro,North,Online,376,300198.66,158116.53,142082.13,2.0,David Kim
+2025-11-01,Analytics Pro,South,Reseller,567,600222.65,233160.57,367062.08,12.7,Alice Nguyen
+2025-11-01,Analytics Pro,East,Online,412,184145.89,80497.15,103648.74,13.4,Frank Chen
+2025-11-01,Analytics Pro,West,Partner,111,140838.49,72517.3,68321.19,3.3,Carol Lee
+2025-11-01,Analytics Pro,International,Online,690,698225.7,252588.69,445637.01,13.4,David Kim
+2025-11-01,DataBridge,North,Reseller,449,189338.39,93600.94,95737.45,8.4,Henry Wilson
+2025-11-01,DataBridge,South,Direct,493,537116.54,205908.7,331207.84,8.0,David Kim
+2025-11-01,DataBridge,East,Partner,218,165788.43,78926.35,86862.08,9.4,David Kim
+2025-11-01,DataBridge,West,Reseller,454,412422.56,175611.98,236810.58,6.3,David Kim
+2025-11-01,DataBridge,International,Direct,123,85513.95,42789.59,42724.36,8.7,Frank Chen
+2025-11-01,ReportMaster,North,Reseller,499,977347.12,344954.17,632392.95,9.0,Alice Nguyen
+2025-11-01,ReportMaster,South,Direct,456,140952.77,49572.0,91380.77,1.4,Carol Lee
+2025-11-01,ReportMaster,East,Direct,135,31088.75,12565.97,18522.78,11.7,Frank Chen
+2025-11-01,ReportMaster,West,Partner,311,557718.41,241342.63,316375.78,3.7,Henry Wilson
+2025-11-01,ReportMaster,International,Direct,655,888965.33,459073.86,429891.47,7.1,Carol Lee
+2025-11-01,CloudSync,North,Online,428,443594.42,241946.33,201648.09,7.7,Eva Martinez
+2025-11-01,CloudSync,South,Online,279,246968.92,105413.47,141555.45,9.3,Frank Chen
+2025-11-01,CloudSync,East,Online,141,210746.41,105721.18,105025.23,12.7,Carol Lee
+2025-11-01,CloudSync,West,Online,159,190790.66,96261.25,94529.41,2.9,Frank Chen
+2025-11-01,CloudSync,International,Direct,250,271882.22,115799.61,156082.61,13.3,Carol Lee
+2025-11-01,InsightHub,North,Reseller,878,441006.43,179559.51,261446.92,5.1,Grace Park
+2025-11-01,InsightHub,South,Direct,98,53132.29,19908.74,33223.55,14.5,Carol Lee
+2025-11-01,InsightHub,East,Partner,709,854339.33,301577.62,552761.71,12.9,Eva Martinez
+2025-11-01,InsightHub,West,Partner,400,265378.32,144565.25,120813.07,6.0,Henry Wilson
+2025-11-01,InsightHub,International,Direct,397,581123.92,318525.4,262598.52,10.8,Henry Wilson
+2025-11-01,AutoReport,North,Direct,203,193169.2,75406.24,117762.96,14.3,Carol Lee
+2025-11-01,AutoReport,South,Reseller,279,225004.66,89253.57,135751.09,4.9,Bob Carter
+2025-11-01,AutoReport,East,Partner,103,36400.1,15104.27,21295.83,7.9,Carol Lee
+2025-11-01,AutoReport,West,Online,247,352157.6,163207.99,188949.61,6.6,Eva Martinez
+2025-11-01,AutoReport,International,Direct,208,164493.37,79873.78,84619.59,1.6,Henry Wilson
+2025-11-01,PulseBoard,North,Direct,463,890197.51,387341.47,502856.04,4.0,Henry Wilson
+2025-11-01,PulseBoard,South,Reseller,572,180038.79,70575.38,109463.41,2.3,Alice Nguyen
+2025-11-01,PulseBoard,East,Direct,296,251036.31,114326.86,136709.45,10.4,Henry Wilson
+2025-11-01,PulseBoard,West,Reseller,384,635600.23,347970.81,287629.42,5.6,David Kim
+2025-11-01,PulseBoard,International,Partner,171,306832.36,128827.96,178004.4,9.8,Frank Chen
+2025-12-01,Enterprise Suite,North,Direct,315,301210.59,136070.09,165140.5,5.0,Bob Carter
+2025-12-01,Enterprise Suite,South,Direct,120,76159.27,37669.46,38489.81,8.6,Henry Wilson
+2025-12-01,Enterprise Suite,East,Online,626,760117.43,276355.71,483761.72,4.1,Carol Lee
+2025-12-01,Enterprise Suite,West,Partner,767,1221840.16,604452.85,617387.31,10.7,David Kim
+2025-12-01,Enterprise Suite,International,Reseller,792,328321.09,156409.47,171911.62,10.8,Alice Nguyen
+2025-12-01,Analytics Pro,North,Online,164,138125.12,53197.7,84927.42,8.6,Henry Wilson
+2025-12-01,Analytics Pro,South,Online,222,283216.21,131262.73,151953.48,11.6,Henry Wilson
+2025-12-01,Analytics Pro,East,Online,692,1160678.47,451912.03,708766.44,11.8,Alice Nguyen
+2025-12-01,Analytics Pro,West,Direct,944,1491151.13,616398.66,874752.47,9.4,Bob Carter
+2025-12-01,Analytics Pro,International,Partner,191,126780.93,67370.25,59410.68,7.8,Bob Carter
+2025-12-01,DataBridge,North,Reseller,859,1507499.39,751352.7,756146.69,11.1,Alice Nguyen
+2025-12-01,DataBridge,South,Reseller,575,954975.67,344525.88,610449.79,0.0,David Kim
+2025-12-01,DataBridge,East,Partner,368,549302.32,218994.17,330308.15,14.5,Eva Martinez
+2025-12-01,DataBridge,West,Online,119,233667.49,97545.57,136121.92,7.2,Henry Wilson
+2025-12-01,DataBridge,International,Partner,155,201779.93,106930.96,94848.97,0.0,Eva Martinez
+2025-12-01,ReportMaster,North,Direct,182,70042.68,34860.68,35182.0,13.3,Frank Chen
+2025-12-01,ReportMaster,South,Direct,486,938720.15,509226.62,429493.53,5.7,Carol Lee
+2025-12-01,ReportMaster,East,Online,194,167704.62,73098.11,94606.51,1.9,Bob Carter
+2025-12-01,ReportMaster,West,Direct,261,243238.13,93429.55,149808.58,0.2,Alice Nguyen
+2025-12-01,ReportMaster,International,Online,359,683999.35,297815.43,386183.92,10.6,Frank Chen
+2025-12-01,CloudSync,North,Direct,277,452613.34,200219.19,252394.15,3.4,David Kim
+2025-12-01,CloudSync,South,Reseller,235,383250.14,150093.86,233156.28,9.5,Grace Park
+2025-12-01,CloudSync,East,Partner,451,356570.24,159019.24,197551.0,8.6,Eva Martinez
+2025-12-01,CloudSync,West,Reseller,604,485485.88,192730.92,292754.96,0.2,David Kim
+2025-12-01,CloudSync,International,Reseller,211,144943.34,52027.98,92915.36,9.6,Henry Wilson
+2025-12-01,InsightHub,North,Partner,230,327152.93,149269.99,177882.94,12.1,Eva Martinez
+2025-12-01,InsightHub,South,Partner,536,736109.75,316402.88,419706.87,0.1,Carol Lee
+2025-12-01,InsightHub,East,Reseller,661,678132.81,352799.82,325332.99,4.6,Carol Lee
+2025-12-01,InsightHub,West,Reseller,234,177123.47,85967.74,91155.73,2.0,David Kim
+2025-12-01,InsightHub,International,Direct,216,340814.11,125752.31,215061.8,12.8,Frank Chen
+2025-12-01,AutoReport,North,Partner,607,777933.75,359169.08,418764.67,11.0,Alice Nguyen
+2025-12-01,AutoReport,South,Reseller,478,916873.19,356312.18,560561.01,2.5,Grace Park
+2025-12-01,AutoReport,East,Reseller,389,730186.48,316523.55,413662.93,10.8,Frank Chen
+2025-12-01,AutoReport,West,Direct,123,187427.6,89945.94,97481.66,5.4,Eva Martinez
+2025-12-01,AutoReport,International,Direct,80,62813.42,25236.58,37576.84,6.5,David Kim
+2025-12-01,PulseBoard,North,Partner,317,248805.06,95190.69,153614.37,9.9,Carol Lee
+2025-12-01,PulseBoard,South,Online,367,599220.99,324296.51,274924.48,2.0,David Kim
+2025-12-01,PulseBoard,East,Reseller,859,1690485.18,796727.64,893757.54,6.0,Alice Nguyen
+2025-12-01,PulseBoard,West,Partner,189,212751.84,107953.47,104798.37,9.9,Henry Wilson
+2025-12-01,PulseBoard,International,Partner,460,319835.42,124457.53,195377.89,3.2,Frank Chen

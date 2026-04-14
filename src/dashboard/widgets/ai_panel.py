@@ -317,22 +317,31 @@ class AIAssistantPanel(QFrame):
         )
 
     def _build_data_context(self, domain: str) -> str:
+        """Build minimal, token-efficient data context for AI prompts."""
         import json
+        
         if domain == "Sales":
+            cols = ["date", "revenue", "units_sold"]
             data = {
-                "sales_monthly_last_6": self._pipeline.sales_monthly.tail(6).to_dict("records"),
-                "by_region": self._pipeline.sales_by_region.to_dict("records"),
-                "by_product": self._pipeline.sales_by_product.head(5).to_dict("records"),
+                "sales_last_3": self._pipeline.sales_monthly[cols].tail(3).to_dict("records"),
+                "top_regions": self._pipeline.sales_by_region.head(3).to_dict("records"),
+                "top_products": self._pipeline.sales_by_product.head(3)[["product", "revenue"]].to_dict("records"),
             }
         elif domain == "Finance":
-            data = {"finance_last_6": self._pipeline.finance.tail(6).to_dict("records")}
+            cols = ["date", "revenue", "net_profit", "ebitda"]
+            data = {"finance_last_3": self._pipeline.finance[cols].tail(3).to_dict("records")}
         elif domain == "HR":
-            data = {"hr_monthly_last_6": self._pipeline.hr_monthly.tail(6).to_dict("records")}
+            cols = ["date", "headcount", "attrition_rate", "new_hires"]
+            data = {"hr_last_3": self._pipeline.hr_monthly[cols].tail(3).to_dict("records")}
         elif domain == "Operations":
-            data = {"operations_last_6": self._pipeline.operations.tail(6).to_dict("records")}
+            cols = ["date", "process_efficiency_pct", "sla_compliance_pct", "defect_rate_pct"]
+            data = {"ops_last_3": self._pipeline.operations[cols].tail(3).to_dict("records")}
         else:
-            data = self._pipeline.ai_summary()
+            # All domains — KPIs only, no raw data
+            data = {"kpis": self._pipeline.kpis}
+        
         try:
-            return json.dumps(data, indent=2, default=str)
+            # Compact JSON (no indentation) to reduce token count
+            return json.dumps(data, separators=(',', ':'), default=str)
         except Exception:
             return str(data)

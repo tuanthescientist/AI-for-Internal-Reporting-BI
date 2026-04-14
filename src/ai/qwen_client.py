@@ -53,33 +53,24 @@ class QwenAIClient:
 
     # ── System prompts ────────────────────────────────────────
     _SYSTEM_BI_ANALYST = (
-        "You are a senior Business Intelligence analyst and data storyteller. "
-        "You work with internal enterprise reporting across Sales, Finance, HR, "
-        "and Operations. Your responses are concise, professional, and action-oriented. "
-        "Always reference specific numbers from the provided data context. "
-        "Never fabricate figures not present in the context. "
-        "Format responses with clear headers (##), bullet points, and tables where appropriate."
+        "You are a senior Business Intelligence analyst. Be concise—aim for 150 words max. "
+        "Reference specific numbers from data only. Never fabricate figures. "
+        "Use bullet points. Professional tone."
     )
 
     _SYSTEM_REPORT_WRITER = (
-        "You are a professional business report writer for Fortune 500 internal reporting. "
-        "Write in a formal, executive-ready style. Structure every report with: "
-        "Executive Summary, Key Findings, Detailed Analysis, Risks & Opportunities, "
-        "and Strategic Recommendations. Use markdown formatting."
+        "You are an executive business report writer. Be concise—500 words max. "
+        "Structure: Executive Summary (3 lines), Key Findings (bullets), Action Items. "
+        "Data-driven, professional tone."
     )
 
     _SYSTEM_ANOMALY_ANALYST = (
-        "You are an AI-powered anomaly detection specialist. "
-        "Your task is to identify statistically unusual patterns in business metrics "
-        "and explain them in plain business language. "
-        "Assign a severity: [LOW / MEDIUM / HIGH / CRITICAL]. "
-        "For each anomaly, provide: What happened, Why it matters, Recommended action."
+        "Explain each anomaly in 2–3 sentences: impact + root cause + action. "
+        "Severity: LOW/MEDIUM/HIGH/CRITICAL. Concise, data-focused."
     )
 
     _SYSTEM_INSIGHT_ENGINE = (
-        "You are a KPI insight engine for internal BI dashboards. "
-        "Generate concise, punchy insights (2–4 sentences max per KPI). "
-        "Be direct and data-driven. Highlight trend direction, magnitude, and implication."
+        "Generate 1–2 sentence insights per KPI: trend + implication. Concise, data-driven."
     )
 
     def __init__(self) -> None:

@@ -179,26 +179,27 @@ class DataPipeline:
 
     # ── Serialisable summary for AI ───────────────────────────
     def ai_summary(self) -> Dict[str, Any]:
-        """Compact dict suitable for injection into LLM prompts."""
-        fin_tail = self.finance.tail(6)[
-            ["date", "revenue", "net_profit", "ebitda", "budget_revenue"]
+        """Compact dict suitable for injection into LLM prompts (token-efficient)."""
+        # Last 3 months only to reduce token count
+        fin_tail = self.finance.tail(3)[
+            ["date", "revenue", "net_profit", "ebitda"]
         ].to_dict("records")
 
-        ops_tail = self.operations.tail(6)[
+        ops_tail = self.operations.tail(3)[
             ["date", "process_efficiency_pct", "sla_compliance_pct", "defect_rate_pct"]
         ].to_dict("records")
 
         hr_tail = self.hr_monthly.tail(3)[
-            ["date", "headcount", "new_hires", "attritions", "attrition_rate"]
+            ["date", "headcount", "attrition_rate"]
         ].to_dict("records")
 
         return {
             "kpis": self.kpis,
-            "finance_last_6_months": fin_tail,
-            "operations_last_6_months": ops_tail,
-            "hr_last_3_months": hr_tail,
-            "top_5_products": self.sales_by_product.head(5).to_dict("records"),
-            "revenue_by_region": self.sales_by_region.to_dict("records"),
+            "finance_last_3": fin_tail,
+            "operations_last_3": ops_tail,
+            "hr_last_3": hr_tail,
+            "top_3_products": self.sales_by_product.head(3)[["product", "revenue"]].to_dict("records"),
+            "top_3_regions": self.sales_by_region.head(3).to_dict("records"),
         }
 
     # ── Private ───────────────────────────────────────────────

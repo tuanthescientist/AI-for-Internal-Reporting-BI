@@ -81,10 +81,20 @@ class AIAssistantPanel(QFrame):
         model_lbl.setStyleSheet(
             f"color: {Config.TEXT_SECONDARY}; font-size: 10px;"
         )
+        self._lang_lbl = QLabel("EN")
+        self._lang_lbl.setToolTip(
+            "Language auto-detected from your message.\n"
+            "Send a message in Vietnamese or English to switch."
+        )
+        self._lang_lbl.setStyleSheet(
+            "background: #21262D; color: #58A6FF; font-size: 10px;"
+            "font-weight: 700; padding: 2px 6px; border-radius: 4px;"
+        )
         title_row.addWidget(icon)
         title_row.addWidget(title_lbl)
         title_row.addStretch()
         title_row.addWidget(model_lbl)
+        title_row.addWidget(self._lang_lbl)
         layout.addLayout(title_row)
 
         # Divider
@@ -204,7 +214,23 @@ class AIAssistantPanel(QFrame):
         fmt.setForeground(QColor(Config.TEXT_PRIMARY))
         cursor.insertText("\n\n", fmt)
         self._chat_display.setTextCursor(cursor)
+        self._update_lang_label()
         self._set_busy(False)
+
+    def _update_lang_label(self) -> None:
+        lang = self._ai.current_language
+        if lang == "vi":
+            self._lang_lbl.setText("VI")
+            self._lang_lbl.setStyleSheet(
+                "background: #1B3A2F; color: #3FB950; font-size: 10px;"
+                "font-weight: 700; padding: 2px 6px; border-radius: 4px;"
+            )
+        else:
+            self._lang_lbl.setText("EN")
+            self._lang_lbl.setStyleSheet(
+                "background: #21262D; color: #58A6FF; font-size: 10px;"
+                "font-weight: 700; padding: 2px 6px; border-radius: 4px;"
+            )
 
     # ── AI Actions ────────────────────────────────────────────
     def _send_message(self) -> None:
@@ -243,23 +269,31 @@ class AIAssistantPanel(QFrame):
         detector = AnomalyDetector(self._ai)
 
         domain = self._context_combo.currentText()
+        p = self._pipeline
+
         if domain == "Finance":
-            df = self._pipeline.finance
-            cols = ["revenue", "net_profit", "ebitda", "operating_expenses"]
+            df = p.finance
+            fin_candidates = ["revenue", "net_profit", "ebitda",
+                               "total_opex", "operating_expenses"]
+            cols = [c for c in fin_candidates if c in df.columns]
         elif domain == "HR":
-            df = self._pipeline.hr_monthly
-            cols = ["headcount", "attrition_rate", "new_hires"]
+            df = p.hr_monthly
+            hr_candidates = ["headcount", "attrition_rate", "new_hires", "eNPS"]
+            cols = [c for c in hr_candidates if c in df.columns]
         elif domain == "Operations":
-            df = self._pipeline.operations
-            cols = ["process_efficiency_pct", "sla_compliance_pct", "defect_rate_pct"]
+            df = p.operations
+            ops_candidates = ["process_efficiency_pct", "sla_compliance_pct",
+                               "defect_rate_pct", "server_uptime_pct",
+                               "change_failure_rate_pct"]
+            cols = [c for c in ops_candidates if c in df.columns]
         else:
-            df = self._pipeline.operations
-            cols = ["process_efficiency_pct", "sla_compliance_pct", "defect_rate_pct"]
+            df = p.operations
+            ops_candidates = ["process_efficiency_pct", "sla_compliance_pct",
+                               "defect_rate_pct", "server_uptime_pct"]
+            cols = [c for c in ops_candidates if c in df.columns]
 
         anomalies = detector.detect_dataframe(df, cols)
-        self._append_user_message(
-            f"🚨 Detect anomalies — {domain}"
-        )
+        self._append_user_message(f"🚨 Detect anomalies — {domain}")
         self._set_busy(True)
 
         def gen():
@@ -319,29 +353,40 @@ class AIAssistantPanel(QFrame):
     def _build_data_context(self, domain: str) -> str:
         """Build minimal, token-efficient data context for AI prompts."""
         import json
-        
+
+        p = self._pipeline
+
+        def _safe_cols(df, *candidates):
+            return [c for c in candidates if c in df.columns]
+
         if domain == "Sales":
-            cols = ["date", "revenue", "units_sold"]
+            sal = p.sales_monthly
+            rev_col = "revenue"  # already normalised in sales_monthly
+            cols = _safe_cols(sal, "date", rev_col, "units_sold", "gross_margin_pct")
             data = {
-                "sales_last_3": self._pipeline.sales_monthly[cols].tail(3).to_dict("records"),
-                "top_regions": self._pipeline.sales_by_region.head(3).to_dict("records"),
-                "top_products": self._pipeline.sales_by_product.head(3)[["product", "revenue"]].to_dict("records"),
+                "sales_last_3": sal[cols].tail(3).to_dict("records"),
+                "top_regions":  p.sales_by_region.head(3).to_dict("records"),
+                "top_products": p.sales_by_product.head(3)[["product", "revenue"]].to_dict("records"),
             }
         elif domain == "Finance":
-            cols = ["date", "revenue", "net_profit", "ebitda"]
-            data = {"finance_last_3": self._pipeline.finance[cols].tail(3).to_dict("records")}
+            fin = p.finance
+            cols = _safe_cols(fin, "date", "revenue", "net_profit", "ebitda",
+                              "gross_margin_pct", "ebitda_margin_pct")
+            data = {"finance_last_3": fin[cols].tail(3).to_dict("records")}
         elif domain == "HR":
-            cols = ["date", "headcount", "attrition_rate", "new_hires"]
-            data = {"hr_last_3": self._pipeline.hr_monthly[cols].tail(3).to_dict("records")}
+            hr = p.hr_monthly
+            cols = _safe_cols(hr, "date", "headcount", "attrition_rate", "new_hires", "eNPS")
+            data = {"hr_last_3": hr[cols].tail(3).to_dict("records")}
         elif domain == "Operations":
-            cols = ["date", "process_efficiency_pct", "sla_compliance_pct", "defect_rate_pct"]
-            data = {"ops_last_3": self._pipeline.operations[cols].tail(3).to_dict("records")}
+            ops = p.operations
+            cols = _safe_cols(ops, "date", "process_efficiency_pct", "sla_compliance_pct",
+                              "defect_rate_pct", "server_uptime_pct",
+                              "deploy_frequency_month", "customer_satisfaction")
+            data = {"ops_last_3": ops[cols].tail(3).to_dict("records")}
         else:
-            # All domains — KPIs only, no raw data
-            data = {"kpis": self._pipeline.kpis}
-        
+            data = {"kpis": p.kpis}
+
         try:
-            # Compact JSON (no indentation) to reduce token count
             return json.dumps(data, separators=(',', ':'), default=str)
         except Exception:
             return str(data)

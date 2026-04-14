@@ -163,14 +163,22 @@ class FinanceChartsPanel(QWidget):
         x = range(len(fin))
         xlabels = [str(d)[:7] for d in fin["date"]]
 
+        def _col(df, *candidates, default=None):
+            for c in candidates:
+                if c in df.columns:
+                    return df[c]
+            return default if default is not None else pd.Series([0] * len(df))
+
         # ── P&L Waterfall (stacked area) ──────────────────────
         ax = axes[0, 0]
+        gross_profit = _col(fin, "gross_profit")
+        net_profit   = _col(fin, "net_profit")
         ax.fill_between(x, fin["revenue"] / 1e6, alpha=0.3, color=ACCENT, label="Revenue")
-        ax.fill_between(x, fin["gross_profit"] / 1e6, alpha=0.3, color=SUCCESS, label="Gross Profit")
-        ax.fill_between(x, fin["net_profit"] / 1e6, alpha=0.4, color=WARNING, label="Net Profit")
+        ax.fill_between(x, gross_profit / 1e6, alpha=0.3, color=SUCCESS, label="Gross Profit")
+        ax.fill_between(x, net_profit / 1e6, alpha=0.4, color=WARNING, label="Net Profit")
         ax.plot(x, fin["revenue"] / 1e6, color=ACCENT, linewidth=1.5)
-        ax.plot(x, fin["gross_profit"] / 1e6, color=SUCCESS, linewidth=1.5)
-        ax.plot(x, fin["net_profit"] / 1e6, color=WARNING, linewidth=1.5)
+        ax.plot(x, gross_profit / 1e6, color=SUCCESS, linewidth=1.5)
+        ax.plot(x, net_profit / 1e6, color=WARNING, linewidth=1.5)
         ax.set_title("P&L Overview")
         ax.set_ylabel("Amount ($M)")
         ax.yaxis.set_major_formatter(mticker.FormatStrFormatter("$%.1fM"))
@@ -181,11 +189,11 @@ class FinanceChartsPanel(QWidget):
 
         # ── Budget vs Actual ───────────────────────────────────
         ax = axes[0, 1]
+        budget = _col(fin, "budget_revenue", "budget_ebitda", default=fin["revenue"] * 0.95)
         width = 0.4
         idx = np.arange(len(fin))
         ax.bar(idx - width/2, fin["revenue"] / 1e6, width, color=ACCENT, label="Actual", alpha=0.8)
-        ax.bar(idx + width/2, fin["budget_revenue"] / 1e6, width, color="#30363D",
-               label="Budget", alpha=0.8)
+        ax.bar(idx + width/2, budget / 1e6, width, color="#30363D", label="Budget", alpha=0.8)
         ax.set_title("Revenue: Actual vs Budget")
         ax.set_ylabel("Amount ($M)")
         ax.yaxis.set_major_formatter(mticker.FormatStrFormatter("$%.1fM"))
@@ -196,8 +204,9 @@ class FinanceChartsPanel(QWidget):
 
         # ── EBITDA Trend ───────────────────────────────────────
         ax = axes[1, 0]
-        ebitda_ma = fin["ebitda"].rolling(3).mean()
-        ax.bar(x, fin["ebitda"] / 1e6, color=SUCCESS, alpha=0.5, label="EBITDA")
+        ebitda = _col(fin, "ebitda")
+        ebitda_ma = ebitda.rolling(3).mean()
+        ax.bar(x, ebitda / 1e6, color=SUCCESS, alpha=0.5, label="EBITDA")
         ax.plot(x, ebitda_ma / 1e6, color=ACCENT, linewidth=2, label="3M MA")
         ax.set_title("EBITDA Trend")
         ax.set_ylabel("EBITDA ($M)")
@@ -209,11 +218,16 @@ class FinanceChartsPanel(QWidget):
 
         # ── Cash Flow ──────────────────────────────────────────
         ax = axes[1, 1]
-        ax.bar(x, fin["operating_cash_flow"] / 1e6, color=SUCCESS, alpha=0.7, label="Operating")
-        ax.bar(x, fin["investing_cash_flow"] / 1e6, color=DANGER, alpha=0.7, label="Investing")
-        ax.bar(x, fin["financing_cash_flow"] / 1e6, color=WARNING, alpha=0.7, label="Financing")
+        op_cf  = _col(fin, "operating_cash_flow", "net_cash_flow")
+        inv_cf = _col(fin, "investing_cash_flow")
+        fin_cf = _col(fin, "financing_cash_flow")
+        ax.bar(x, op_cf / 1e6,  color=SUCCESS, alpha=0.7, label="Operating")
+        if (inv_cf != 0).any():
+            ax.bar(x, inv_cf / 1e6, color=DANGER,  alpha=0.7, label="Investing")
+        if (fin_cf != 0).any():
+            ax.bar(x, fin_cf / 1e6, color=WARNING, alpha=0.7, label="Financing")
         ax.axhline(0, color=Config.TEXT_SECONDARY, linewidth=0.8, linestyle="--")
-        ax.set_title("Cash Flow Components")
+        ax.set_title("Cash Flow / Net Cash Flow")
         ax.set_ylabel("Cash Flow ($M)")
         ax.yaxis.set_major_formatter(mticker.FormatStrFormatter("$%.1fM"))
         ax.set_xticks(list(x)[::4])
@@ -241,20 +255,28 @@ class HRChartsPanel(QWidget):
         fig = self._canvas.fig
         fig.clear()
         axes = fig.subplots(2, 2)
-        hr = self._p.hr_monthly
-        hr_dept = self._p.hr.groupby("department").agg(
-            headcount=("headcount", "mean"),
-            attrition=("attrition_rate_pct", "mean"),
-        ).reset_index()
+        hr     = self._p.hr_monthly
+        hr_raw = self._p.hr
         x = range(len(hr))
         xlabels = [str(d)[:7] for d in hr["date"]]
 
+        def _col(df, *candidates, default=None):
+            for c in candidates:
+                if c in df.columns:
+                    return df[c]
+            n = len(df)
+            return default if default is not None else pd.Series([0] * n, index=df.index)
+
         # ── Headcount Trend ────────────────────────────────────
         ax = axes[0, 0]
-        ax.fill_between(x, hr["headcount"], alpha=0.2, color=ACCENT)
-        ax.plot(x, hr["headcount"], color=ACCENT, linewidth=2)
-        ax.fill_between(x, hr["new_hires"], alpha=0.5, color=SUCCESS, label="Hires")
-        ax.fill_between(x, hr["attritions"], alpha=0.5, color=DANGER, label="Attritions")
+        hc = _col(hr, "headcount")
+        hires = _col(hr, "new_hires")
+        attritions = _col(hr, "attritions", default=pd.Series([0]*len(hr), index=hr.index))
+        ax.fill_between(x, hc, alpha=0.2, color=ACCENT)
+        ax.plot(x, hc, color=ACCENT, linewidth=2, label="Headcount")
+        ax.fill_between(x, hires, alpha=0.5, color=SUCCESS, label="Hires")
+        if attritions.sum() > 0:
+            ax.fill_between(x, attritions, alpha=0.5, color=DANGER, label="Attritions")
         ax.set_title("Headcount Trend")
         ax.set_ylabel("No. of Employees")
         ax.set_xticks(list(x)[::4])
@@ -264,8 +286,9 @@ class HRChartsPanel(QWidget):
 
         # ── Attrition Rate ─────────────────────────────────────
         ax = axes[0, 1]
-        clrs = [DANGER if v > 4 else SUCCESS for v in hr["attrition_rate"]]
-        ax.bar(x, hr["attrition_rate"], color=clrs, alpha=0.8)
+        att_rate = _col(hr, "attrition_rate")
+        clrs = [DANGER if v > 4 else SUCCESS for v in att_rate]
+        ax.bar(x, att_rate, color=clrs, alpha=0.8)
         ax.axhline(4, color=WARNING, linewidth=1.5, linestyle="--", label="Target ≤4%")
         ax.set_title("Monthly Attrition Rate")
         ax.set_ylabel("Attrition (%)")
@@ -274,35 +297,41 @@ class HRChartsPanel(QWidget):
         ax.legend()
         ax.grid(True, axis="y")
 
-        # ── Performance Distribution (stacked bar by dept) ─────
+        # ── Headcount by Department (bar) ──────────────────────
         ax = axes[1, 0]
-        perf = self._p.hr.groupby("department").agg(
-            below=("performance_below", "sum"),
-            meets=("performance_meets", "sum"),
-            exceeds=("performance_exceeds", "sum"),
-        ).reset_index()
-        depts = perf["department"]
-        ax.bar(depts, perf["below"], label="Below", color=DANGER, alpha=0.8)
-        ax.bar(depts, perf["meets"], bottom=perf["below"], label="Meets", color=WARNING, alpha=0.8)
-        ax.bar(depts, perf["exceeds"], bottom=perf["below"] + perf["meets"],
-               label="Exceeds", color=SUCCESS, alpha=0.8)
-        ax.set_title("Performance Distribution by Dept")
-        ax.set_ylabel("Employee Count")
-        ax.set_xticks(range(len(depts)))
-        ax.set_xticklabels(depts, rotation=30, ha="right")
-        ax.legend()
+        hc_col  = "headcount_eop" if "headcount_eop" in hr_raw.columns else "headcount"
+        att_col = "attrition_rate_pct" if "attrition_rate_pct" in hr_raw.columns else "attrition_rate"
+        if "department" in hr_raw.columns:
+            dept_agg = hr_raw.groupby("department")[hc_col].mean().reset_index()
+            dept_agg.columns = ["department", "headcount"]
+            clrs_d = [PALETTE[i % len(PALETTE)] for i in range(len(dept_agg))]
+            ax.bar(dept_agg["department"], dept_agg["headcount"], color=clrs_d, alpha=0.8)
+            ax.set_xticks(range(len(dept_agg)))
+            ax.set_xticklabels(dept_agg["department"], rotation=30, ha="right")
+        ax.set_title("Avg Headcount by Department")
+        ax.set_ylabel("Avg Headcount")
         ax.grid(True, axis="y")
 
-        # ── Avg Training Hours by Dept ─────────────────────────
+        # ── eNPS / Engagement or Training Hours ────────────────
         ax = axes[1, 1]
-        train = self._p.hr.groupby("department")["training_hours"].mean().reset_index()
-        clrs = [PALETTE[i % len(PALETTE)] for i in range(len(train))]
-        ax.barh(train["department"], train["training_hours"], color=clrs)
-        ax.set_title("Avg Monthly Training Hours")
-        ax.set_xlabel("Hours")
-        ax.axvline(8, color=WARNING, linewidth=1.5, linestyle="--", label="Target 8h")
-        ax.legend()
-        ax.grid(True, axis="x")
+        if "eNPS" in hr.columns:
+            enps = _col(hr, "eNPS")
+            ax.plot(x, enps, color=ACCENT, linewidth=2, marker="o", markersize=3, label="eNPS")
+            ax.axhline(0, color=Config.TEXT_SECONDARY, linewidth=0.8, linestyle="--")
+            ax.set_title("eNPS Trend")
+            ax.set_ylabel("eNPS Score")
+            ax.legend()
+        elif "training_hours" in hr_raw.columns:
+            train = hr_raw.groupby("department")["training_hours"].mean().reset_index()
+            clrs_t = [PALETTE[i % len(PALETTE)] for i in range(len(train))]
+            ax.barh(train["department"], train["training_hours"], color=clrs_t)
+            ax.set_title("Avg Monthly Training Hours")
+            ax.set_xlabel("Hours")
+            ax.axvline(8, color=WARNING, linewidth=1.5, linestyle="--", label="Target 8h")
+            ax.legend()
+        ax.set_xticks(list(x)[::4])
+        ax.set_xticklabels(xlabels[::4], rotation=30, ha="right")
+        ax.grid(True, axis="y")
 
         self._canvas.draw()
 
@@ -328,60 +357,79 @@ class OpsChartsPanel(QWidget):
         x = range(len(ops))
         xlabels = [str(d)[:7] for d in ops["date"]]
 
-        # ── Process Efficiency ─────────────────────────────────
+        def _col(df, *candidates, default=None):
+            for c in candidates:
+                if c in df.columns:
+                    return df[c]
+            n = len(df)
+            return default if default is not None else pd.Series([0] * n, index=df.index)
+
+        eff_series  = _col(ops, "process_efficiency_pct", "server_uptime_pct", default=pd.Series([95]*len(ops), index=ops.index))
+        sla_series  = _col(ops, "sla_compliance_pct", "customer_satisfaction", default=pd.Series([95]*len(ops), index=ops.index))
+        def_series  = _col(ops, "defect_rate_pct", "change_failure_rate_pct", default=pd.Series([2]*len(ops), index=ops.index))
+
+        # ── Process Efficiency / Server Uptime ─────────────────
         ax = axes[0, 0]
-        clrs = [SUCCESS if v >= 94 else DANGER for v in ops["process_efficiency_pct"]]
-        ax.bar(x, ops["process_efficiency_pct"], color=clrs, alpha=0.8)
+        clrs = [SUCCESS if v >= 94 else DANGER for v in eff_series]
+        ax.bar(x, eff_series, color=clrs, alpha=0.8)
         ax.axhline(94, color=WARNING, linewidth=1.5, linestyle="--", label="Target 94%")
         ax.set_ylim(70, 100)
-        ax.set_title("Process Efficiency (%)")
-        ax.set_ylabel("Efficiency (%)")
+        eff_title = "Server Uptime (%)" if "server_uptime_pct" in ops.columns else "Process Efficiency (%)"
+        ax.set_title(eff_title)
+        ax.set_ylabel(eff_title)
         ax.set_xticks(list(x)[::4])
         ax.set_xticklabels(xlabels[::4], rotation=30, ha="right")
         ax.legend()
         ax.grid(True, axis="y")
 
-        # ── SLA Compliance ─────────────────────────────────────
+        # ── SLA Compliance / Customer Satisfaction ─────────────
         ax = axes[0, 1]
-        ax.fill_between(x, ops["sla_compliance_pct"], 98, alpha=0.2,
-                        where=[v < 98 for v in ops["sla_compliance_pct"]],
-                        color=DANGER, label="Below SLA")
-        ax.plot(x, ops["sla_compliance_pct"], color=ACCENT, linewidth=2)
-        ax.axhline(98, color=WARNING, linewidth=1.5, linestyle="--", label="SLA Target 98%")
+        ax.fill_between(x, sla_series, 98, alpha=0.2,
+                        where=[v < 98 for v in sla_series],
+                        color=DANGER, label="Below Target")
+        ax.plot(x, sla_series, color=ACCENT, linewidth=2)
+        ax.axhline(98, color=WARNING, linewidth=1.5, linestyle="--", label="Target 98%")
         ax.set_ylim(70, 100)
-        ax.set_title("SLA Compliance (%)")
-        ax.set_ylabel("SLA (%)")
+        sla_title = "SLA Compliance (%)" if "sla_compliance_pct" in ops.columns else "Customer Satisfaction"
+        ax.set_title(sla_title)
+        ax.set_ylabel(sla_title)
         ax.set_xticks(list(x)[::4])
         ax.set_xticklabels(xlabels[::4], rotation=30, ha="right")
         ax.legend()
         ax.grid(True, axis="y")
 
-        # ── Defect Rate ────────────────────────────────────────
+        # ── Defect Rate / Change Failure Rate ──────────────────
         ax = axes[1, 0]
-        defect_ma = ops["defect_rate_pct"].rolling(3).mean()
-        ax.bar(x, ops["defect_rate_pct"], color=WARNING, alpha=0.5, label="Defect Rate")
-        ax.plot(x, defect_ma, color=DANGER, linewidth=2, label="3M MA")
-        ax.set_title("Defect Rate (%)")
-        ax.set_ylabel("Defect Rate (%)")
+        def_ma = def_series.rolling(3).mean()
+        ax.bar(x, def_series, color=WARNING, alpha=0.5, label="Rate")
+        ax.plot(x, def_ma, color=DANGER, linewidth=2, label="3M MA")
+        def_title = "Defect Rate (%)" if "defect_rate_pct" in ops.columns else "Change Failure Rate (%)"
+        ax.set_title(def_title)
+        ax.set_ylabel(def_title)
         ax.set_xticks(list(x)[::4])
         ax.set_xticklabels(xlabels[::4], rotation=30, ha="right")
         ax.legend()
         ax.grid(True, axis="y")
 
-        # ── Ticket Volume & Capacity ───────────────────────────
+        # ── MTTR / Resolution Time or Deploy Frequency ─────────
         ax = axes[1, 1]
-        ax2 = ax.twinx()
-        ax.bar(x, ops["ticket_volume"], color=ACCENT, alpha=0.4, label="Ticket Volume")
-        ax2.plot(x, ops["capacity_utilisation_pct"], color=SUCCESS, linewidth=2,
-                 label="Capacity Util.")
-        ax.set_title("Ticket Volume & Capacity Utilisation")
-        ax.set_ylabel("Ticket Count")
-        ax2.set_ylabel("Capacity (%)", color=SUCCESS)
+        if "deploy_frequency_month" in ops.columns:
+            deploy = ops["deploy_frequency_month"]
+            ax.bar(x, deploy, color=ACCENT, alpha=0.7, label="Deploys/Month")
+            ax.set_title("Deployment Frequency")
+            ax.set_ylabel("Deployments / Month")
+        elif "ticket_volume" in ops.columns:
+            ax.bar(x, ops["ticket_volume"], color=ACCENT, alpha=0.4, label="Ticket Volume")
+            ax.set_title("Ticket Volume")
+            ax.set_ylabel("Ticket Count")
+        else:
+            mttr = _col(ops, "mean_time_to_restore_hrs", "avg_resolution_hours", "p1_resolution_hours")
+            ax.plot(x, mttr, color=WARNING, linewidth=2, marker="o", markersize=3, label="MTTR (hrs)")
+            ax.set_title("Mean Time to Restore (hrs)")
+            ax.set_ylabel("Hours")
         ax.set_xticks(list(x)[::4])
         ax.set_xticklabels(xlabels[::4], rotation=30, ha="right")
-        lines1, labels1 = ax.get_legend_handles_labels()
-        lines2, labels2 = ax2.get_legend_handles_labels()
-        ax.legend(lines1 + lines2, labels1 + labels2, loc="upper left")
+        ax.legend()
         ax.grid(True, axis="y")
 
         self._canvas.draw()

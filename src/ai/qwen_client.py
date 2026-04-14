@@ -141,7 +141,7 @@ class QwenAIClient:
         temperature: float = Config.AI_TEMPERATURE,
         max_tokens: int = Config.AI_MAX_TOKENS,
     ) -> Generator[str, None, None]:
-        """Low-level streaming call to Groq API."""
+        """Low-level streaming call to Groq API. Strips <think>…</think> blocks."""
         client = _get_groq_client()
         try:
             completion = client.chat.completions.create(
@@ -154,13 +154,57 @@ class QwenAIClient:
                 stream=True,
                 stop=None,
             )
-            for chunk in completion:
-                content = chunk.choices[0].delta.content or ""
-                if content:
-                    yield content
+            raw = (chunk.choices[0].delta.content or ""
+                   for chunk in completion)
+            yield from self._filter_thinking(raw)
         except Exception as exc:
             logger.error("Groq API error: %s", exc)
             yield f"\n\n⚠️ AI Error: {exc}"
+
+    @staticmethod
+    def _filter_thinking(
+        stream: Generator[str, None, None]
+    ) -> Generator[str, None, None]:
+        """
+        Remove Qwen 3 chain-of-thought blocks (<think>…</think>) from a
+        token stream so only the final answer reaches the UI.
+
+        Handles tags split across chunk boundaries correctly.
+        """
+        in_think = False
+        buf = ""
+        _OPEN  = "<think>"   # len 7
+        _CLOSE = "</think>"  # len 8
+
+        for chunk in stream:
+            buf += chunk
+            while buf:
+                if in_think:
+                    end = buf.find(_CLOSE)
+                    if end != -1:
+                        in_think = False
+                        buf = buf[end + len(_CLOSE):].lstrip("\n")
+                    else:
+                        # Discard all but the last 8 chars (partial tag guard)
+                        buf = buf[-len(_CLOSE):] if len(buf) > len(_CLOSE) else buf
+                        break
+                else:
+                    start = buf.find(_OPEN)
+                    if start != -1:
+                        if start > 0:
+                            yield buf[:start]
+                        in_think = True
+                        buf = buf[start + len(_OPEN):]
+                    else:
+                        # Emit everything except last 6 chars (partial-tag guard)
+                        safe = len(buf) - (len(_OPEN) - 1)
+                        if safe > 0:
+                            yield buf[:safe]
+                            buf = buf[safe:]
+                        break
+
+        if buf and not in_think:
+            yield buf
 
     def _build_messages(
         self,

@@ -69,9 +69,9 @@ class MainWindow(QMainWindow):
     @staticmethod
     def _load_logo(size: int) -> "QPixmap | None":
         """
-        Load 'AI Forecast logo_theme.png', scale to *size* px, and
-        convert white pixels → transparent, dark pixels → white so the
-        logo looks correct on the dark dashboard background.
+        Load 'AI Forecast logo_theme.png', scale to *size* px, then
+        convert: white/light background → transparent, dark ink → white,
+        so the logo renders cleanly on the dark dashboard.
         """
         logo_path = Config.ROOT_DIR / "AI Forecast logo_theme.png"
         if not logo_path.exists():
@@ -79,21 +79,23 @@ class MainWindow(QMainWindow):
         pm = QPixmap(str(logo_path))
         if pm.isNull():
             return None
-        # Scale first (fewer pixels to process)
         pm = pm.scaled(size, size, Qt.KeepAspectRatio, Qt.SmoothTransformation)
         img = pm.toImage().convertToFormat(QImage.Format_ARGB32)
         for y in range(img.height()):
             for x in range(img.width()):
-                c = QColor(img.pixel(x, y))
-                r, g, b = c.red(), c.green(), c.blue()
-                brightness = (r + g + b) / 3
-                if brightness > 180:
-                    # White background → transparent
-                    img.setPixel(x, y, QColor(0, 0, 0, 0).rgba())
+                px = img.pixel(x, y)          # raw ARGB int (0xAARRGGBB)
+                # Extract RGB via bit-shifting — avoids QColor constructor ambiguity
+                r = (px >> 16) & 0xFF
+                g = (px >> 8)  & 0xFF
+                b =  px        & 0xFF
+                # Perceived luminance: 255 = white background, 0 = black ink
+                lum = (r * 299 + g * 587 + b * 114) // 1000
+                inv = 255 - lum               # invert: ink → opaque, bg → transparent
+                if inv < 30:
+                    img.setPixel(x, y, 0x00000000)          # fully transparent
                 else:
-                    # Dark foreground → white for dark theme
-                    alpha = max(0, min(255, int((180 - brightness) / 180 * 255)))
-                    img.setPixel(x, y, QColor(255, 255, 255, alpha).rgba())
+                    alpha = min(255, inv + 40)               # slight boost
+                    img.setPixel(x, y, (alpha << 24) | 0x00FFFFFF)  # white + alpha
         return QPixmap.fromImage(img)
 
     # ── UI Construction ───────────────────────────────────────
@@ -136,6 +138,7 @@ class MainWindow(QMainWindow):
             logo_lbl.setFont(QFont("Segoe UI Emoji", 20))
         logo_lbl.setFixedSize(44, 44)
         logo_lbl.setAlignment(Qt.AlignCenter)
+        logo_lbl.setStyleSheet("background: transparent;")
 
         title = QLabel(Config.APP_NAME)
         title.setStyleSheet(

@@ -247,6 +247,53 @@ class QwenAIClient:
         self._history.append({"role": "user", "content": content})
         self._history.append({"role": "assistant", "content": full_response})
 
+    def chat_rag(
+        self,
+        message: str,
+        passages: "List[Any]",  # List[rag_retriever.Passage]
+    ) -> Generator[str, None, None]:
+        """
+        RAG-augmented chat: injects retrieved data passages into the prompt
+        and instructs Qwen to cite [REF-N] after every factual claim.
+
+        The caller is responsible for retrieving passages first:
+            passages = retriever.retrieve(message, k=5)
+            for chunk in client.chat_rag(message, passages):
+                ...
+        """
+        lang = detect_language(message)
+        self._last_lang = lang
+
+        # Build the RAG context block
+        if passages:
+            ctx_lines = ["=== RETRIEVED DATA SOURCES ==="]
+            for p in passages:
+                ctx_lines.append(p.prompt_block())
+            ctx_lines.append("\n=== QUESTION ===")
+            ctx_lines.append(message)
+            content = "\n".join(ctx_lines)
+        else:
+            content = message
+
+        # Augment the system prompt with citation instruction
+        cite_instruction = (
+            "\n\nCITATION RULE: You MUST cite the source reference [REF-N] "
+            "immediately after every factual number or claim you use from the "
+            "retrieved data. Example: 'Revenue was $1.2M [REF-1] in December.'"
+            " Do NOT invent data outside the provided sources."
+        )
+        system = self._system(self._BASE_BI_ANALYST, lang) + cite_instruction
+
+        msgs = self._build_messages(content, system, include_history=True)
+
+        full_response = ""
+        for chunk in self._stream(msgs):
+            full_response += chunk
+            yield chunk
+
+        self._history.append({"role": "user", "content": message})
+        self._history.append({"role": "assistant", "content": full_response})
+
     def generate_executive_report(
         self, data_summary: Dict[str, Any]
     ) -> Generator[str, None, None]:

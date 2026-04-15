@@ -24,7 +24,7 @@ from __future__ import annotations
 from datetime import datetime
 
 from PyQt5.QtCore import Qt, QTimer
-from PyQt5.QtGui import QFont, QFontDatabase, QIcon
+from PyQt5.QtGui import QFont, QFontDatabase, QIcon, QPixmap, QImage, QColor
 from PyQt5.QtWidgets import (
     QApplication, QFrame, QHBoxLayout, QLabel,
     QMainWindow, QScrollArea, QSizePolicy,
@@ -60,6 +60,41 @@ class MainWindow(QMainWindow):
         self.setWindowTitle(Config.WINDOW_TITLE)
         self.setMinimumSize(Config.WINDOW_MIN_WIDTH, Config.WINDOW_MIN_HEIGHT)
         self.resize(Config.WINDOW_MIN_WIDTH + 200, Config.WINDOW_MIN_HEIGHT + 100)
+        # Set taskbar / title-bar icon
+        logo_px = self._load_logo(32)
+        if logo_px:
+            self.setWindowIcon(QIcon(logo_px))
+
+    # ── Logo loader ───────────────────────────────────────────
+    @staticmethod
+    def _load_logo(size: int) -> "QPixmap | None":
+        """
+        Load 'AI Forecast logo_theme.png', scale to *size* px, and
+        convert white pixels → transparent, dark pixels → white so the
+        logo looks correct on the dark dashboard background.
+        """
+        logo_path = Config.ROOT_DIR / "AI Forecast logo_theme.png"
+        if not logo_path.exists():
+            return None
+        pm = QPixmap(str(logo_path))
+        if pm.isNull():
+            return None
+        # Scale first (fewer pixels to process)
+        pm = pm.scaled(size, size, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+        img = pm.toImage().convertToFormat(QImage.Format_ARGB32)
+        for y in range(img.height()):
+            for x in range(img.width()):
+                c = QColor(img.pixel(x, y))
+                r, g, b = c.red(), c.green(), c.blue()
+                brightness = (r + g + b) / 3
+                if brightness > 180:
+                    # White background → transparent
+                    img.setPixel(x, y, QColor(0, 0, 0, 0).rgba())
+                else:
+                    # Dark foreground → white for dark theme
+                    alpha = max(0, min(255, int((180 - brightness) / 180 * 255)))
+                    img.setPixel(x, y, QColor(255, 255, 255, alpha).rgba())
+        return QPixmap.fromImage(img)
 
     # ── UI Construction ───────────────────────────────────────
     def _build_ui(self) -> None:
@@ -86,14 +121,22 @@ class MainWindow(QMainWindow):
             f"  border-bottom: 2px solid {Config.ACCENT_COLOR};"
             f"}}"
         )
-        frame.setMaximumHeight(60)
+        frame.setMaximumHeight(64)
 
         layout = QHBoxLayout(frame)
-        layout.setContentsMargins(16, 8, 16, 8)
+        layout.setContentsMargins(16, 6, 16, 6)
 
-        # Logo + title
-        logo = QLabel("📊")
-        logo.setFont(QFont("Segoe UI Emoji", 20))
+        # Logo image (white-on-transparent for dark theme)
+        logo_lbl = QLabel()
+        logo_pixmap = self._load_logo(40)
+        if logo_pixmap:
+            logo_lbl.setPixmap(logo_pixmap)
+        else:
+            logo_lbl.setText("📊")
+            logo_lbl.setFont(QFont("Segoe UI Emoji", 20))
+        logo_lbl.setFixedSize(44, 44)
+        logo_lbl.setAlignment(Qt.AlignCenter)
+
         title = QLabel(Config.APP_NAME)
         title.setStyleSheet(
             f"color: {Config.TEXT_PRIMARY}; font-size: 18px; font-weight: 700;"
@@ -101,7 +144,7 @@ class MainWindow(QMainWindow):
         subtitle = QLabel(f"  v{Config.APP_VERSION}")
         subtitle.setStyleSheet(f"color: {Config.TEXT_SECONDARY}; font-size: 12px;")
 
-        layout.addWidget(logo)
+        layout.addWidget(logo_lbl)
         layout.addWidget(title)
         layout.addWidget(subtitle)
         layout.addStretch()

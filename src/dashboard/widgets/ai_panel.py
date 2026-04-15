@@ -7,7 +7,7 @@ Author: Tuan Tran
 from __future__ import annotations
 
 import logging
-from typing import Generator
+from typing import Generator, List, Optional
 
 from PyQt5.QtCore import QThread, pyqtSignal, Qt
 from PyQt5.QtGui import QFont, QColor, QTextCursor
@@ -17,6 +17,7 @@ from PyQt5.QtWidgets import (
 )
 
 from src.config.settings import Config
+from src.ai.rag_retriever import RAGRetriever, Passage
 
 logger = logging.getLogger(__name__)
 
@@ -61,6 +62,8 @@ class AIAssistantPanel(QFrame):
         self._ai = ai_client
         self._pipeline = pipeline
         self._worker: _AIWorker | None = None
+        self._rag = RAGRetriever(pipeline)
+        self._pending_passages: List[Passage] = []
         self._build_ui()
 
     # ── UI Construction ───────────────────────────────────────
@@ -212,10 +215,51 @@ class AIAssistantPanel(QFrame):
         cursor.movePosition(QTextCursor.End)
         fmt = cursor.charFormat()
         fmt.setForeground(QColor(Config.TEXT_PRIMARY))
-        cursor.insertText("\n\n", fmt)
+        cursor.insertText("\n", fmt)
+
+        # Render RAG citation block if passages were used
+        if self._pending_passages:
+            self._append_citations(self._pending_passages)
+            self._pending_passages = []
+
+        cursor.movePosition(QTextCursor.End)
+        fmt.setForeground(QColor(Config.TEXT_PRIMARY))
+        cursor.insertText("\n", fmt)
         self._chat_display.setTextCursor(cursor)
         self._update_lang_label()
         self._set_busy(False)
+
+    def _append_citations(self, passages: List[Passage]) -> None:
+        """Render a styled 'Sources' block after the AI response."""
+        cursor = self._chat_display.textCursor()
+        cursor.movePosition(QTextCursor.End)
+        fmt = cursor.charFormat()
+
+        # Header
+        fmt.setForeground(QColor("#6E7681"))
+        cursor.insertText("─" * 38 + "\n", fmt)
+        fmt.setForeground(QColor("#58A6FF"))
+        cursor.insertText("📎 Sources\n", fmt)
+
+        # One line per passage
+        _DOMAIN_COLORS = {
+            "Finance":    "#3FB950",
+            "Sales":      "#00D4FF",
+            "HR":         "#D29922",
+            "Operations": "#A371F7",
+            "Customers":  "#F0883E",
+        }
+        for p in passages:
+            color = _DOMAIN_COLORS.get(p.domain, "#8B949E")
+            fmt.setForeground(QColor(color))
+            cursor.insertText(f"  {p.ref} ", fmt)
+            fmt.setForeground(QColor("#8B949E"))
+            cursor.insertText(f"{p.domain} — {p.source}\n", fmt)
+
+        fmt.setForeground(QColor("#6E7681"))
+        cursor.insertText("─" * 38 + "\n", fmt)
+        self._chat_display.setTextCursor(cursor)
+        self._chat_display.ensureCursorVisible()
 
     def _update_lang_label(self) -> None:
         lang = self._ai.current_language
@@ -238,15 +282,22 @@ class AIAssistantPanel(QFrame):
         if not msg or self._worker and self._worker.isRunning():
             return
         self._input.clear()
-        context_domain = self._context_combo.currentText()
 
-        # Build data context string
-        data_ctx = self._build_data_context(context_domain)
+        # RAG retrieval — find relevant data passages for this query
+        passages = self._rag.retrieve(msg, k=4)
+        self._pending_passages = passages
+
         self._append_user_message(msg)
         self._set_busy(True)
 
-        def gen():
-            return self._ai.chat(msg, data_context=data_ctx)
+        if passages:
+            def gen():
+                return self._ai.chat_rag(msg, passages)
+        else:
+            # Fallback: no relevant passages → plain chat with domain context
+            data_ctx = self._build_data_context(self._context_combo.currentText())
+            def gen():
+                return self._ai.chat(msg, data_context=data_ctx)
 
         self._run_worker(gen)
 
